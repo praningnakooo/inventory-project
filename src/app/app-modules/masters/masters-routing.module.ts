@@ -1,0 +1,34 @@
+import { ItemmasterComponent } from "../itemmaster/itemmaster.component";
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+
+import { AddCustomerComponent } from "./customer/add-customer/add-customer.component";
+import { ModifyCustomerComponent } from "./customer/modify-customer/modify-customer.component";
+import { ViewCustomerComponent } from "./customer/view-customer/view-customer.component";
+
+import { QuotationComponent } from "./quotation/quotation.component";
+
+const routes: Routes = [
+  {
+    path: "customer/add",
+    component: AddCustomerComponent
+  },
+  { path: "customer/view", component: ViewCustomerComponent },
+  { path: "customer/modify", component: ModifyCustomerComponent },
+
+  {
+    path: "item-master",
+    component: ItemmasterComponent
+  },
+
+  {
+    path: "quote-master",
+    component: QuotationComponent
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class MastersRoutingModule {}
