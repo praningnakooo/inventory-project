@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { AuthService } from "src/app/app-modules/auth/auth.service";
 import { Observable } from "rxjs";
+import { ItemmasterComponent } from "src/app/app-modules/itemmaster/itemmaster.component";
 
 @Component({
   selector: "app-sidebar",
@@ -9,10 +9,9 @@ import { Observable } from "rxjs";
   styleUrls: ["./sidebar.component.css"]
 })
 export class SidebarComponent implements OnInit {
-  isLoginPage: boolean = false;
-  isLoggedIn$: Observable<boolean>;
+ 
 
-  constructor(private router: Router, private authService: AuthService) {
+  constructor(private router: Router) {
     // console.log("this.router.url: ", this.router.url);
     // if (this.router.url === "/" || this.router.url === "/login") {
     //   //alert("MATCHED");
@@ -23,6 +22,5 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.isLoggedIn$ = this.authService.isLoggedIn;
   }
 }

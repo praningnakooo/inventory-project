@@ -60,7 +60,7 @@
       <div class="form-group col-md-3">
         <label>Customer List</label>
         <select class="form-control" (change)="_custChangeClickHandler($event.target.value)">
-          <option [value]="0">--SELECT CUSTOMER--</option>
+          <option [value]="0">--SELECT PRODUCT--</option>
           <option *ngFor="let allCustomers of _allCustomers; let i of index"
           [value]="allCustomers.csCustSupplrCode"
           
@@ -76,7 +76,7 @@
           class="btn btn-primary form-control"
           (click)="_searchCustomerClickHandler()"
         >
-          SEARCH CUSTOMER
+          SEARCH PRODUCT
         </button>
         </div>
     </form>
@@ -92,7 +92,7 @@
         
       <form [formGroup]="_customerMasterForm">
         <div class="form-group col-md-3">
-          <label>Name</label>
+          <label>Product Name</label>
           <input type="email" class="form-control" placeholder="Enter Name of the Product" 
           [(ngModel)]="_customerDetails.csName"
           formControlName="csName"
