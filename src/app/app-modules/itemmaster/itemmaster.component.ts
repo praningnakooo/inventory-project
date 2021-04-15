@@ -28,9 +28,8 @@ export class ItemmasterComponent implements OnInit {
   displayedColumns = [
     "itItemCode",
     "itItemName",
-    "itDescription",
+    "itCategory",
     "itQuantity",
-    "itUOM",
     "itPrice"
   ];
 
@@ -56,7 +55,7 @@ export class ItemmasterComponent implements OnInit {
   itemMasterForm = this.fb.group({
     itItemCode: ["", Validators.required],
     itItemName: ["", Validators.required],
-    itDescription: ["", Validators.required],
+    itCategory: ["", Validators.required],
     itQuantity: ["", Validators.required],
     itGroupCode: ["", Validators.required],
     itPrice: ["", Validators.required],
@@ -193,8 +192,8 @@ export class ItemmasterComponent implements OnInit {
         this.itemMasterForm.controls["itItemName"].setValue(
           this.singleItemDetails.itItemName
         );
-        this.itemMasterForm.controls["itDescription"].setValue(
-          this.singleItemDetails.itDescription
+        this.itemMasterForm.controls["itCategory"].setValue(
+          this.singleItemDetails.itCategory
         );
         this.itemMasterForm.controls["itQuantity"].setValue(
           this.singleItemDetails.itQuantity

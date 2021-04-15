@@ -26,10 +26,10 @@
       </ng-container>
 
       <!-- Name Column -->
-      <ng-container matColumnDef="itDescription">
-        <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+      <ng-container matColumnDef="itCategory">
+        <mat-header-cell *matHeaderCellDef>Category</mat-header-cell>
         <mat-cell *matCellDef="let element">
-          {{ element.itDescription }}
+          {{ element.itCategory }}
         </mat-cell>
       </ng-container>
 
@@ -47,17 +47,7 @@
         <mat-cell *matCellDef="let element">
           {{ element.itPrice }}
         </mat-cell>
-      </ng-container>
-
-      <!-- Name Column -->
-      <ng-container matColumnDef="itUOM">
-        <mat-header-cell *matHeaderCellDef> Unit of Measurement </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          {{ element.itUOM }}
-        </mat-cell>
-      </ng-container>
-
-     
+      </ng-container> 
 
       <ng-container matColumnDef="action">
         <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
