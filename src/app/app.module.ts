@@ -4,7 +4,6 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { InputFieldComponent } from "./app-modules/common/input-field/input-field.component";
 import { HeaderComponent } from "./shared/header/header.component";
 import { CommonButtonComponent } from "./shared/controls/common-button/common-button.component";
 import { CommonInputComponent } from "./shared/controls/common-input/common-input.component";
@@ -19,7 +18,6 @@ import { HttpClientModule } from "@angular/common/http";
     AppComponent,
     SidebarComponent,
     HeaderComponent,
-    InputFieldComponent,
     HeaderComponent,
     CommonButtonComponent,
     CommonInputComponent,
