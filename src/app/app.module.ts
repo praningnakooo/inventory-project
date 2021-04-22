@@ -18,7 +18,6 @@ import { HttpClientModule } from "@angular/common/http";
     AppComponent,
     SidebarComponent,
     HeaderComponent,
-    HeaderComponent,
     CommonButtonComponent,
     CommonInputComponent,
     CommonSelectComponent,
