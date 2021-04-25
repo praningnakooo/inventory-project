@@ -16,6 +16,17 @@ constructor(private http: HttpClient, private errorHandlerService: ErrorHandlerS
 
 }
 
+fetchAll(): Observable<Products[]> {
+  return this.http
+    .get<Products[]>(this.url, { responseType: "json" })
+    .pipe(
+      tap((_) => console.log("fetched products")),
+      catchError(
+        this.errorHandlerService.handleError<Products[]>("fetchAll", [])
+      )
+    );
+  }
+
 // getAllItems() {
 //   return this.http.get("http://localhost:8084/items");
 // }
@@ -26,15 +37,5 @@ constructor(private http: HttpClient, private errorHandlerService: ErrorHandlerS
 // updateItem() {}
 // getPaginationItem() {}
 
+}
 
-fetchAll(): Observable<Products[]> {
-return this.http
-  .get<Products[]>(this.url, { responseType: "json" })
-  .pipe(
-    tap((_) => console.log("fetched products")),
-    catchError(
-      this.errorHandlerService.handleError<Products[]>("fetchAll", [])
-    )
-  );
-}
-}

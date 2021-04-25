@@ -7,15 +7,15 @@
             <!-- Position Column -->
             <ng-container matColumnDef="itItemCode">
                 <mat-header-cell *matHeaderCellDef> Item Code </mat-header-cell>
-                <mat-cell *ngFor="let product">
-                    {{ product.item.id }}
+                <mat-cell *matCellDef="let product">
+                    {{ product.item_id }}
                 </mat-cell>
             </ng-container>
 
             <!-- Name Column -->
             <ng-container matColumnDef="itItemName">
                 <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-                <mat-cell *ngFor="let product">
+                <mat-cell *matCellDef="let product">
                     {{ product.item_name }}
                 </mat-cell>
             </ng-container>
@@ -23,15 +23,15 @@
             <!-- Name Column -->
             <ng-container matColumnDef="itCategory">
                 <mat-header-cell *matHeaderCellDef>Category</mat-header-cell>
-                <mat-cell *ngFor="let product">
-                    {{ product.category_id }}
+                <mat-cell *matCellDef="let product">
+                    {{ product.category_name }}
                 </mat-cell>
             </ng-container>
 
             <!-- Name Column -->
             <ng-container matColumnDef="itQuantity">
                 <mat-header-cell *matHeaderCellDef>Quantity</mat-header-cell>
-                <mat-cell *ngFor="let product">
+                <mat-cell *matCellDef="let product">
                     {{ product.quantity }}
                 </mat-cell>
             </ng-container>
@@ -39,7 +39,7 @@
             <!-- Name Column -->
             <ng-container matColumnDef="itPrice">
                 <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
-                <mat-cell *ngFor="let product">
+                <mat-cell *matCellDef="let product">
                     {{ product.price }}
                 </mat-cell>
             </ng-container>
