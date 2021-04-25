@@ -40,7 +40,7 @@ export class ItemmasterComponent implements OnInit {
 
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  _dataSource$: Observable<Products[]>;
+  _dataSource$!: Observable<Products[]>;
   // msg = ["123"];
   // list: [];
 
