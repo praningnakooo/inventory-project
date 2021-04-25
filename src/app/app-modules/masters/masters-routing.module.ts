@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: "customer/modify", component: ModifyCustomerComponent },
 
   {
-    path: "item-master",
+    path: "item/view",
     component: ItemmasterComponent
   },
 
