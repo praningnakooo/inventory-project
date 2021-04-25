@@ -12,14 +12,17 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { MastersRoutingModule } from "./masters-routing.module";
 import { QuotationComponent } from './quotation/quotation.component';
-import { ItemmasterComponent } from "../itemmaster/itemmaster.component";
+
+import { ViewItemComponent } from "./item/view-item/view-item.component";
+import { AddItemComponent } from "./item/add-item/add-item.component";
 
 @NgModule({
   declarations: [
     AddCustomerComponent,
     ViewCustomerComponent,
     ModifyCustomerComponent,
-    ItemmasterComponent,
+    ViewItemComponent,
+    AddItemComponent,
     QuotationComponent
   ],
   imports: [

@@ -1,4 +1,4 @@
-import { AddItem } from "./../../../app/model/add-item.model";
+import { AddItem } from "../../../../model/add-item.model";
 // import {
 //   CustomerAPI,
 //   STATE_CITY_API,
@@ -10,7 +10,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 @Injectable({
   providedIn: "root"
 })
-export class CustomerService {
+export class ItemService {
   /* global variables start */
   httpHeaders = new HttpHeaders({
     "Content-Type": "application/json"

@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ItemmasterService } from './itemmaster.service';
+import { ViewItemService } from './view-item.service';
 
-describe('ItemmasterService', () => {
+describe('ViewItemService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ItemmasterService = TestBed.get(ItemmasterService);
+    const service: ViewItemService = TestBed.get(ViewItemService);
     expect(service).toBeTruthy();
   });
 });

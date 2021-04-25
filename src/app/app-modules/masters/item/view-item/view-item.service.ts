@@ -8,7 +8,7 @@ import { catchError, tap } from 'rxjs/operators';
 @Injectable({
 providedIn: "root"
 })
-export class ItemmasterService {
+export class ViewItemService {
 
   private url = "http://localhost:3000/products"
 constructor(private http: HttpClient, private errorHandlerService: ErrorHandlerService) {

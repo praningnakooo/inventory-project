@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Customer } from "src/app/model/Customer.model";
 import { CustomerAddress } from "src/app/model/CustomerAddress.model";
 import { FormBuilder, Form, FormGroup, Validators } from "@angular/forms";
-import { CustomerService } from "../add-item/add-item.service";
+import { ItemService } from "./add-item.service";
 import { all } from "q";
 
 @Component({
@@ -15,7 +15,7 @@ export class AddItemComponent implements OnInit {
   _customerDetails: Customer;
   _billingAddress: CustomerAddress;
   _shippingAddress: CustomerAddress;
-  _customerMasterForm: any;
+  _itemMasterForm: any;
   _addressArray: CustomerAddress[] = [];
   _allStates: any;
   _billCities: any;
@@ -26,14 +26,14 @@ export class AddItemComponent implements OnInit {
   //variables end
   constructor(
     private _formBuilder: FormBuilder,
-    private _customerService: CustomerService
+    private _customerService: ItemService
   ) {
     this._customerDetails = new Customer();
     this._billingAddress = new CustomerAddress();
     this._billingAddress.csadAddrCode = 1;
     this._shippingAddress = new CustomerAddress();
     this._shippingAddress.csadAddrCode = 2;
-    this._customerMasterForm = this._formBuilder.group({
+    this._itemMasterForm = this._formBuilder.group({
       csName: ["", Validators.required],
       csPanNo: ["", Validators.required],
       csRemark: ["", Validators.required],

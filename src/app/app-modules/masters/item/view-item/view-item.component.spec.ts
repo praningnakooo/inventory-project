@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ViewItemComponent } from './view-item.component';
 
-import { ItemmasterComponent } from './itemmaster.component';
-
-describe('ItemmasterComponent', () => {
-  let component: ItemmasterComponent;
-  let fixture: ComponentFixture<ItemmasterComponent>;
+describe('ViewItemComponent', () => {
+  let component: ViewItemComponent;
+  let fixture: ComponentFixture<ViewItemComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ItemmasterComponent ]
+      declarations: [ ViewItemComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ItemmasterComponent);
+    fixture = TestBed.createComponent(ViewItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
