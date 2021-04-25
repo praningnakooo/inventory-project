@@ -1,55 +1,51 @@
-
 <section class="content">
-  <div
-    class="box-header with-border box box-primary"
-    style="background: white;box-shadow:none;"
-  >
-    <div class="box-header with-border">
-      <h3 class="box-title">All Enquiries</h3>
-    </div>
-    <mat-table #table [dataSource]="_dataSource">
-      <!-- Position Column -->
-      <ng-container matColumnDef="itItemCode">
-        <mat-header-cell *matHeaderCellDef> Item Code </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          {{ element.itItemCode }}
-        </mat-cell>
-      </ng-container>
-  
+    <div class="box-header with-border box box-primary" style="background: white;box-shadow:none;">
+        <div class="box-header with-border">
+            <h3 class="box-title">All Enquiries</h3>
+        </div>
+        <mat-table #table [dataSource]="_dataSource$ | async">
+            <!-- Position Column -->
+            <ng-container matColumnDef="itItemCode">
+                <mat-header-cell *matHeaderCellDef> Item Code </mat-header-cell>
+                <mat-cell *matCellDef="let product">
+                    {{ product.item.id }}
+                </mat-cell>
+            </ng-container>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="itItemName">
-        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          {{ element.itItemName }}
-        </mat-cell>
-      </ng-container>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="itCategory">
-        <mat-header-cell *matHeaderCellDef>Category</mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          {{ element.itCategory }}
-        </mat-cell>
-      </ng-container>
+            <!-- Name Column -->
+            <ng-container matColumnDef="itItemName">
+                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                <mat-cell *matCellDef="let product">
+                    {{ product.item_name }}
+                </mat-cell>
+            </ng-container>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="itQuantity">
-        <mat-header-cell *matHeaderCellDef>Quantity</mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          {{ element.itQuantity }}
-        </mat-cell>
-      </ng-container>
+            <!-- Name Column -->
+            <ng-container matColumnDef="itCategory">
+                <mat-header-cell *matHeaderCellDef>Category</mat-header-cell>
+                <mat-cell *matCellDef="let product">
+                    {{ product.category_id }}
+                </mat-cell>
+            </ng-container>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="itPrice">
-        <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          {{ element.itPrice }}
-        </mat-cell>
-      </ng-container> 
+            <!-- Name Column -->
+            <ng-container matColumnDef="itQuantity">
+                <mat-header-cell *matHeaderCellDef>Quantity</mat-header-cell>
+                <mat-cell *matCellDef="let product">
+                    {{ product.quantity }}
+                </mat-cell>
+            </ng-container>
 
-      <ng-container matColumnDef="action">
+            <!-- Name Column -->
+            <ng-container matColumnDef="itPrice">
+                <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
+                <mat-cell *matCellDef="let product">
+                    {{ product.price }}
+                </mat-cell>
+            </ng-container>
+
+            <!-- <ng-container matColumnDef="action">
         <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
         <mat-cell *matCellDef="let element">
           <i class="fa fa-edit edit-fa-btn" (click)="_editEnquiry(element)"></i>
@@ -58,15 +54,15 @@
             (click)="_deleteEnquiry(element)"
           ></i>
         </mat-cell>
-      </ng-container>
+      </ng-container> -->
 
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-    </mat-table>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+        </mat-table>
 
-    <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
-    </mat-paginator>
-  </div>
+        <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
+        </mat-paginator>
+    </div>
 
-  <!-- <pre>{{ _items.value | json }}</pre> -->
+    <!-- <pre>{{ _items.value | json }}</pre> -->
 </section>

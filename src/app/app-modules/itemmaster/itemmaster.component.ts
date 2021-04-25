@@ -14,6 +14,7 @@ import { MatPaginator } from "@angular/material/paginator";
 import { MatTableDataSource } from "@angular/material/table";
 
 import { ItemmasterService } from "./itemmaster.service";
+import { Products } from "src/app/model/Product";
 
 // import inventoryData from './inventory.json';
 
@@ -36,35 +37,36 @@ export class ItemmasterComponent implements OnInit {
   ];
 
 
+
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  _dataSource: any;
-  msg = ["123"];
-  list: [];
+  _dataSource$: Observable<Products[]>;
+  // msg = ["123"];
+  // list: [];
 
 
   constructor(
-    private http: HttpClient
-  ) {}
+    private productListService: ItemmasterService) {}
 
-  ngOnInit() {
-    this.getAllItems();
+  ngOnInit():  void {
+    this._dataSource$ = this.productListService.fetchAll();
   }
 
-  getAllItems() {
-    this.http
-      .get<ApiResponse>("http://localhost:8084/items")
-      .subscribe(apiResponse => {
-        if (apiResponse.response.respCode == "0000") {
-          this.list = apiResponse.item;
-          console.log(this.list);
+  // getAllItems() {
+  //   this.http
+  //     .get<ApiResponse>("http://localhost:3000")
+  //     .subscribe(apiResponse => {
+  //       if (apiResponse.response.respCode == "0000") {
+  //         this.list = apiResponse.item;
+  //         console.log(this.list);
 
-          console.log("apiResponse.data : ", JSON.stringify(apiResponse.item));
-          this._dataSource = new MatTableDataSource<Element>(apiResponse.item);
-          this._dataSource.paginator = this.paginator;
-          console.log(this._dataSource);
-        }
-        // console.log(data);
-      });
+  //         console.log("apiResponse.data : ", JSON.stringify(apiResponse.item));
+  //         this._dataSource = new MatTableDataSource<Element>(apiResponse.item);
+  //         this._dataSource.paginator = this.paginator;
+  //         console.log(this._dataSource);
+  //       }
+  //       // console.log(data);
+  //     });
   }
 
-}
+
