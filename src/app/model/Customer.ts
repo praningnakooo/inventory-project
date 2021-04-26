@@ -1,7 +1,7 @@
 export interface CustomerList {
-  id: number,
-  first_name: string,
-  last_name: string,
+  customer_id: number,
+  customer_name: string,
   address: string,
+  last_name: string,
   age: number
 }
