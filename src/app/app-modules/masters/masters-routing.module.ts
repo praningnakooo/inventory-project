@@ -9,7 +9,9 @@ import { ViewCustomerComponent } from "./customer/view-customer/view-customer.co
 import { AddItemComponent } from "./item/add-item/add-item.component";
 import { ModifyItemComponent } from "./item/modify-item/modify-item.component";
 import { ViewItemComponent } from "./item/view-item/view-item.component";
+import { LoginComponent } from "./login/login.component";
 import { QuotationComponent } from "./quotation/quotation.component";
+import { SignupComponent } from "./signup/signup.component";
 
 const routes: Routes = [
   {
@@ -39,7 +41,15 @@ const routes: Routes = [
   {
     path: "quote-master",
     component: QuotationComponent
-  }
+  },
+  {
+    path: "login",
+    component: LoginComponent
+  },
+  {
+    path: "signup",
+    component: SignupComponent
+  },
 ];
 
 @NgModule({
