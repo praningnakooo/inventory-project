@@ -1,5 +1,5 @@
 
-export class AddItem {
+export class Item {
   csCustSupplrCode: Number;
   csName: string;
   csCustOf: Number;

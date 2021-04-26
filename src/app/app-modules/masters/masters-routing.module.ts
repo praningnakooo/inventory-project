@@ -7,6 +7,7 @@ import { ModifyCustomerComponent } from "./customer/modify-customer/modify-custo
 import { ViewCustomerComponent } from "./customer/view-customer/view-customer.component";
 
 import { AddItemComponent } from "./item/add-item/add-item.component";
+import { ModifyItemComponent } from "./item/modify-item/modify-item.component";
 import { ViewItemComponent } from "./item/view-item/view-item.component";
 import { QuotationComponent } from "./quotation/quotation.component";
 
@@ -27,12 +28,14 @@ const routes: Routes = [
     path: "item/add",
     component: AddItemComponent
   },
-
   {
     path: "item/view",
     component: ViewItemComponent
   },
-
+  {
+    path: "item/modify",
+    component: ModifyItemComponent
+  },
   {
     path: "quote-master",
     component: QuotationComponent

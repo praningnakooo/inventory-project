@@ -15,6 +15,7 @@ import { QuotationComponent } from './quotation/quotation.component';
 
 import { ViewItemComponent } from "./item/view-item/view-item.component";
 import { AddItemComponent } from "./item/add-item/add-item.component";
+import { ModifyItemComponent } from "./item/modify-item/modify-item.component";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AddItemComponent } from "./item/add-item/add-item.component";
     ModifyCustomerComponent,
     ViewItemComponent,
     AddItemComponent,
+    ModifyItemComponent,
     QuotationComponent
   ],
   imports: [

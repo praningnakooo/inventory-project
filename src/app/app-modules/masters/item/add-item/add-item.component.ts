@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Customer } from "src/app/model/Customer.model";
 import { CustomerAddress } from "src/app/model/CustomerAddress.model";
 import { FormBuilder, Form, FormGroup, Validators } from "@angular/forms";
-import { ItemService } from "./add-item.service";
+import { ItemService } from "../item.service";
 import { all } from "q";
 
 @Component({
