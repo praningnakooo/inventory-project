@@ -9,7 +9,7 @@ import { CustomerList } from "src/app/model/Customer";
   providedIn: "root",
 })
 export class ViewCustomerService {
-  private url = "http://localhost:3000/products";
+  private url = "http://localhost:3000/customers";
   constructor(
     private http: HttpClient,
     private errorHandlerService: ErrorHandlerService
@@ -19,7 +19,7 @@ export class ViewCustomerService {
     return this.http
       .get<CustomerList[]>(this.url, { responseType: "json" })
       .pipe(
-        tap((_) => console.log("fetched products")),
+        tap((_) => console.log("fetched customers")),
         catchError(
           this.errorHandlerService.handleError<CustomerList[]>("fetchAll", [])
         )
