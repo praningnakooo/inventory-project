@@ -4,7 +4,7 @@ import { Routes, RouterModule } from "@angular/router";
 const routes: Routes = [
   {
     path: "masters",
-    loadChildren: "./app-modules/masters/masters.module#MastersModule"
+    loadChildren: () => import('./app-modules/masters/masters.module').then(m => m.MastersModule)
   },
   { path: "**", redirectTo: "", pathMatch: "full" }
 ];

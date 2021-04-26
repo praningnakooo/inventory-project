@@ -20,7 +20,7 @@ export class ViewCustomerComponent implements OnInit {
     "itAge"
   ];
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   _dataSource$!: Observable<CustomerList[]>;
 
 
