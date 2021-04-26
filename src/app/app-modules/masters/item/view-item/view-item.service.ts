@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { from, Observable } from "rxjs";
 import { Products } from "src/app/model/Product";
-import { ErrorHandlerService } from "./error-handler.service";
+import { ErrorHandlerService } from "../../../../shared/service/error-handler.service";
 import { catchError, tap } from "rxjs/operators";
 
 @Injectable({
