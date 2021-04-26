@@ -1,11 +1,11 @@
 
-export class Item {
-  csCustSupplrCode: Number;
-  csName: string;
+export interface Item {
+  customer_id: number,
+  customer_name: string;
   csCustOf: Number;
   csCustSupplFlg: string;
   csType: string;
-  csFileNo: string;
+  address: string;
   csCreatedBy: string;
   csTsEdited: Date;
   csDeletedFlg: string;

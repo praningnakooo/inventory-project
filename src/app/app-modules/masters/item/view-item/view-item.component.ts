@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { Observable } from "rxjs";
 
 //angular material table
@@ -7,9 +7,9 @@ import { ViewItemService } from "./view-item.service";
 import { Products } from "src/app/model/Product";
 
 @Component({
-  selector: "app-itemmaster",
+  selector: "app-view-item",
   templateUrl: "./view-item.component.html",
-  styleUrls: ["./view-item.component.css"]
+  styleUrls: ["./view-item.component.css"],
 })
 export class ViewItemComponent implements OnInit {
   displayedColumns = [
@@ -17,19 +17,15 @@ export class ViewItemComponent implements OnInit {
     "itItemName",
     "itCategory",
     "itQuantity",
-    "itPrice"
+    "itPrice",
   ];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   _dataSource$!: Observable<Products[]>;
 
+  constructor(private productListService: ViewItemService) {}
 
-  constructor(
-    private productListService: ViewItemService) {}
-
-  ngOnInit():  void {
+  ngOnInit(): void {
     this._dataSource$ = this.productListService.fetchAll();
   }
-  }
-
-
+}
