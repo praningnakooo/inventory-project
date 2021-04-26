@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CommonInputComponent } from './common-input.component';
 
@@ -6,7 +6,7 @@ describe('CommonInputComponent', () => {
   let component: CommonInputComponent;
   let fixture: ComponentFixture<CommonInputComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CommonInputComponent ]
     })
