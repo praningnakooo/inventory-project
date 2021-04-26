@@ -5,6 +5,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { AddCustomerComponent } from "./customer/add-customer/add-customer.component";
 import { ModifyCustomerComponent } from "./customer/modify-customer/modify-customer.component";
 import { ViewCustomerComponent } from "./customer/view-customer/view-customer.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
 
 import { AddItemComponent } from "./item/add-item/add-item.component";
 import { ModifyItemComponent } from "./item/modify-item/modify-item.component";
@@ -14,6 +15,10 @@ import { QuotationComponent } from "./quotation/quotation.component";
 import { SignupComponent } from "./signup/signup.component";
 
 const routes: Routes = [
+  {
+    path: "dashboard",
+    component: DashboardComponent
+  },
   {
     path: "customer/add",
     component: AddCustomerComponent
