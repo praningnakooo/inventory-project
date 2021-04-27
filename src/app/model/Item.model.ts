@@ -1,4 +1,3 @@
-
 export class Item {
   customer_id: number;
   customer_name: string;

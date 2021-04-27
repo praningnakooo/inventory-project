@@ -1,8 +1,8 @@
 export interface Products {
-  item_id: Number,
-  category_id: Number,
+  item_id: number,
+  category_name: number,
   item_name: string,
-  quantity: Number,
-  price: Number
+  quantity: number,
+  price: number;
   // itemCreatedBy: string
 }
