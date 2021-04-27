@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Form, FormGroup, Validators } from "@angular/forms";
-import { ItemService } from "../item.service";
+import { ItemService } from "../../../../shared/service/item.service";
 import { Products } from "src/app/model/Product";
 import { Observable } from "rxjs";
 
@@ -31,9 +31,18 @@ export class AddItemComponent implements OnInit {
 
   ngOnInit() {}
 
-  _addCustomerClickHandler() {
+  _addItemClickHandler() {
     //adding address in main model
     console.log(JSON.stringify(this._itemDetails));
-    // this._itemDetails.csCreatedBy = "0001";
+    this._itemDetails.itemCreatedBy = "0001";
+    this._itemService
+      ._itemActions(this._itemDetails, "ADD")
+      .subscribe(apiResponse => {
+        console.log("response after adding a customer: ", apiResponse);
+        alert(
+          `Customer with ID: ${apiResponse.data[0].item_id} & NAME:${apiResponse.data[0].item_name} successfully added.`
+        );
+      });
+    alert(" ");
   }
 }

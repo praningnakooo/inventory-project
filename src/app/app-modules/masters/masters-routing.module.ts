@@ -20,24 +20,25 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
-    path: "customer/add",
-    component: AddCustomerComponent
-  },
-  {
     path: "customer/view",
     component: ViewCustomerComponent
   },
+  {
+    path: "customer/add",
+    component: AddCustomerComponent
+  },
+
   {
     path: "customer/modify",
     component: ModifyCustomerComponent
   },
   {
-    path: "item/add",
-    component: AddItemComponent
-  },
-  {
     path: "item/view",
     component: ViewItemComponent
+  },
+  {
+    path: "item/add",
+    component: AddItemComponent
   },
   {
     path: "item/modify",
