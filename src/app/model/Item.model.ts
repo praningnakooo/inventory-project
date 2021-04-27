@@ -1,31 +1,9 @@
 
-export interface Item {
-  customer_id: number,
+export class Item {
+  customer_id: number;
   customer_name: string;
-  csCustOf: Number;
-  csCustSupplFlg: string;
-  csType: string;
-  address: string;
+  category_id: string;
+  quantity: number;
+  price: number;
   csCreatedBy: string;
-  csTsEdited: Date;
-  csDeletedFlg: string;
-  csEditedBy: string;
-  csAccCode: string;
-  csAccountNo: string;
-  csPanNo: string;
-  csAccountEmailId: string;
-  csRemark: string;
-  csCustFlg: string;
-  csAadharNo: string;
-  csAreaLocation: Number;
-  csSource: Number;
-  csContactPerson1: string;
-  csContactPerson2: string;
-  csEmailId: string;
-  csTelNo1: string;
-  csTelNo2: string;
-  csTelNo3: string;
-  csGstNo: string;
-//   csBlacklisted: string;
-//   customerAddress: CustomerAddress[] = [];
 }
