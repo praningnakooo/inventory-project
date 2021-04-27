@@ -45,19 +45,6 @@ export class AddItemComponent implements OnInit {
 
   ngOnInit() {}
 
-  _addItemClickHandler() {
-    console.log(JSON.stringify(this._itemDetails));
-    this._itemDetails.csCreatedBy = "0001";
-    this._itemService
-      ._itemActions(this._itemDetails, "ADD")
-      .subscribe(apiResponse => {
-        console.log("response after adding a customer: ", apiResponse);
-        alert(
-          `Customer with ID: ${apiResponse.data[0].csCustSupplrCode} & NAME:${apiResponse.data[0].csName} successfully added.`
-        );
-      });
-    alert(" ");
-  }
   onSubmit() {
     console.log(this.btnText);
     console.log(this._itemMasterForm.value);
