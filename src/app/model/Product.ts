@@ -3,6 +3,6 @@ export interface Products {
   category_id: Number,
   item_name: string,
   quantity: Number,
-  price: Number,
-  itemCreatedBy: string
+  price: Number
+  // itemCreatedBy: string
 }
