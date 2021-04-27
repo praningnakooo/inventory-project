@@ -13,6 +13,8 @@ export class AddItemComponent implements OnInit {
   //variables start
   _itemDetails: Products;
   _itemMasterForm: any;
+  btnText = "ADD";
+
 
   //variables end
   constructor(
@@ -45,4 +47,8 @@ export class AddItemComponent implements OnInit {
       });
     alert(" ");
   }
+  resetFormClickHandler() {
+      this.btnText = "ADD";
+      this._itemMasterForm.reset();
+    }
 }
