@@ -3,7 +3,7 @@ import { Observable } from "rxjs";
 
 //angular material table
 import { MatPaginator } from "@angular/material/paginator";
-import { ViewItemService } from "./view-item.service";
+import { ViewItemService } from "../../../../shared/service/view-item.service";
 import { Products } from "src/app/model/Product";
 
 @Component({

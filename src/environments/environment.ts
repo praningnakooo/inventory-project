@@ -20,6 +20,10 @@ export const CustomerAPI = {
   getAll: `${URL}/customers`,
   GET_SINGLE_CUSTOMER: `${URL}/customer`
 };
+export const ItemAPI = {
+  getAll: `${URL}/items`,
+  GET_SINGLE_ITEM: `${URL}/items`
+};
 export const STATE_CITY_API = {
   GET_ALL_STATES_URL: `${URL}/states`,
   GET_ALL_CITIES_URL: `${URL}/cities`
@@ -28,7 +32,8 @@ export const STATE_CITY_API = {
 export const Masters = {
   areaLocation: `${URL}/arealocation`,
   source: `${URL}/source`,
-  customer: `${URL}/customers`
+  customer: `${URL}/customers`,
+  item: `${URL}/items`
 };
 
 export const ItemMaster = {
