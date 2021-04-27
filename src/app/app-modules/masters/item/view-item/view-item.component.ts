@@ -20,8 +20,8 @@ export class ViewItemComponent implements OnInit {
     "itPrice",
   ];
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  _dataSource$!: Observable<Products[]>;
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  _dataSource$: Observable<Products[]>;
 
   constructor(private productListService: ViewItemService) {}
 
