@@ -4,5 +4,4 @@ export interface Products {
   item_name: string,
   quantity: number,
   price: number;
-  // itemCreatedBy: string
 }
