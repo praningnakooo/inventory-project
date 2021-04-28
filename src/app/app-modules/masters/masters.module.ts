@@ -3,7 +3,6 @@ import { CommonModule } from "@angular/common";
 
 import { AddCustomerComponent } from "./customer/add-customer/add-customer.component";
 import { ViewCustomerComponent } from "./customer/view-customer/view-customer.component";
-import { ModifyCustomerComponent } from "./customer/modify-customer/modify-customer.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
@@ -21,7 +20,6 @@ import { QuotationComponent } from './quotation/quotation.component';
 
 import { ViewItemComponent } from "./item/view-item/view-item.component";
 import { AddItemComponent } from "./item/add-item/add-item.component";
-import { ModifyItemComponent } from "./item/modify-item/modify-item.component";
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -30,10 +28,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   declarations: [
     AddCustomerComponent,
     ViewCustomerComponent,
-    ModifyCustomerComponent,
     ViewItemComponent,
     AddItemComponent,
-    ModifyItemComponent,
     QuotationComponent,
     SignupComponent,
     LoginComponent,
@@ -54,6 +50,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatInputModule,
     MatListModule,
     MatToolbarModule,
+    MatIconModule,
   ]
 })
 export class MastersModule {}
