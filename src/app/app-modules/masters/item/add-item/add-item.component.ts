@@ -17,7 +17,11 @@ interface ApiResponse {
   styleUrls: ["./add-item.component.css"]
 })
 export class AddItemComponent implements OnInit {
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> b6523f97661de4deb2ccddb776be31a2f6fb219f
 
   ngOnInit() {}
 
