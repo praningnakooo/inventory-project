@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { from, Observable } from "rxjs";
-import { ErrorHandlerService } from "./error-handler.service";
+import { ErrorHandlerService } from "../../../../shared/service/error-handler.service";
 import { catchError, tap } from "rxjs/operators";
 import { CustomerList } from "src/app/model/Customer";
 
