@@ -6,15 +6,15 @@ export const environment = {
   production: false,
   //ITEM MASTER MAPPING
 
-  ITEMS_GET_ALL: "http://localhost:8084/items",
-  ITEMS_GET_SINGLE: "http://localhost:8084/items/",
-  ITEMS_UPDATE_SINGLE_ITEM: "http://localhost:8084/items",
-  ITEMS_DELETE_SINGLE: "http://localhost:8084/items/",
-  ITEMS_CREATE_SINGLE: "http://localhost:8084/item",
-  ITEMS_SINGLE_ITEM_PAGINATION: "http://localhost:8084/items/pagination"
+  ITEMS_GET_ALL: "http://localhost:4200/items",
+  ITEMS_GET_SINGLE: "http://localhost:4200/items/",
+  ITEMS_UPDATE_SINGLE_ITEM: "http://localhost:4200/items",
+  ITEMS_DELETE_SINGLE: "http://localhost:4200/items/",
+  ITEMS_CREATE_SINGLE: "http://localhost:4200/item",
+  ITEMS_SINGLE_ITEM_PAGINATION: "http://localhost:4200/items/pagination"
 };
 
-const URL = "http://localhost:8084";
+const URL = "http://localhost:4200";
 
 export const CustomerAPI = {
   getAll: `${URL}/customers`,
@@ -23,10 +23,6 @@ export const CustomerAPI = {
 export const ItemAPI = {
   getAll: `${URL}/items`,
   GET_SINGLE_ITEM: `${URL}/items`
-};
-export const STATE_CITY_API = {
-  GET_ALL_STATES_URL: `${URL}/states`,
-  GET_ALL_CITIES_URL: `${URL}/cities`
 };
 
 export const Masters = {
@@ -40,11 +36,7 @@ export const ItemMaster = {
   GET_ALL_ITEMS: `${URL}/items`
 };
 
-export const Enquiry = {
-  ADD_ENQUIRY: `${URL}/enquiry/`,
-  GET_ALL_ENQUIRY: `${URL}/enquiry/GET`,
-  EDIT_ENQUIRY: `${URL}/enquiry/edit`
-};
+
 
 /*
  * For easier debugging in development mode, you can import the following file

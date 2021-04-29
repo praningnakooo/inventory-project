@@ -1,7 +1,6 @@
 import { Customer } from "./../../../model/Customer.model";
 import {
   CustomerAPI,
-  STATE_CITY_API,
   Masters
 } from "./../../../../environments/environment";
 import { Injectable } from "@angular/core";
@@ -29,12 +28,6 @@ export class CustomerService {
     return this.http.get<Customer>(CustomerAPI.getAll);
   }
 
-  GET_ALL_STATES_URL() {
-    return this.http.get(STATE_CITY_API.GET_ALL_STATES_URL);
-  }
-  GET_ALL_CITIES_URL(stateId) {
-    return this.http.get(`${STATE_CITY_API.GET_ALL_CITIES_URL}/${stateId}`);
-  }
   _getSingleCustomer(customerId) {
     return this.http.get<Customer>(
       `${CustomerAPI.GET_SINGLE_CUSTOMER}/${customerId}`
