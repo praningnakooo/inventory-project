@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ViewItemService } from '../../../../shared/service/view-item.service';
+import { ItemService } from '../../../../shared/service/item.service';
 
-describe('ViewItemService', () => {
+describe('ItemService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ViewItemService = TestBed.get(ViewItemService);
+    const service: ItemService = TestBed.get(ItemService);
     expect(service).toBeTruthy();
   });
 });

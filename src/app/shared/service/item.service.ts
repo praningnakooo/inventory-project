@@ -1,20 +1,37 @@
-import { Item } from "../../model/Item.model";
-import { CustomerAPI, Masters, ItemMaster, ItemAPI } from "../../../environments/environment";
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { Products } from "src/app/model/Product";
+import { ErrorHandlerService } from "./error-handler.service";
+import { catchError, tap } from "rxjs/operators";
+import { ItemAPI, Masters } from "src/environments/environment";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class ItemService {
-  /* global variables start */
+  private url = "http://localhost:3000/products";
+
   httpHeaders = new HttpHeaders({
     "Content-Type": "application/json"
   });
-  /* global variables end */
-  constructor(private http: HttpClient) {}
 
-  itemOperation(action) {}
+  constructor(
+    private http: HttpClient,
+    private errorHandlerService: ErrorHandlerService,
+
+  ) {}
+
+  fetchAll(): Observable<Products[]> {
+    return this.http
+      .get<Products[]>(this.url, { responseType: "json" })
+      .pipe(
+        tap((_) => console.log("fetched products")),
+        catchError(
+          this.errorHandlerService.handleError<Products[]>("fetchAll", [])
+        )
+      );
+  }
 
   _itemActions(model, actionType) {
     return this.http.post<any>(`${Masters.item}/${actionType}`, model, {
@@ -23,11 +40,11 @@ export class ItemService {
   }
 
   getAllItem() {
-    return this.http.get<Item>(ItemAPI.getAll);
+    return this.http.get<Products[]>(ItemAPI.getAll);
   }
 
   _getSingleItem(itemId) {
-    return this.http.get<Item>(
+    return this.http.get<Products[]>(
       `${ItemAPI.GET_SINGLE_ITEM}/${itemId}`
     );
   }
@@ -37,7 +54,7 @@ export class ItemService {
   // _getAreaLocation() {
   //   return this.http.get<any>(`${Masters.areaLocation}`);
   // }
-  _getAllItems() {
-    return this.http.get<any>(ItemMaster.GET_ALL_ITEMS);
-  }
+  // _getAllItems() {
+  //   return this.http.get<any>(ItemMaster.GET_ALL_ITEMS);
+  // }
 }

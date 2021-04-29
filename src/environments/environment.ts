@@ -32,10 +32,6 @@ export const Masters = {
   item: `${URL}/items`
 };
 
-export const ItemMaster = {
-  GET_ALL_ITEMS: `${URL}/items`
-};
-
 
 
 /*

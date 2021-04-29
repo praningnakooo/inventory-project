@@ -3,7 +3,7 @@ import { Observable } from "rxjs";
 
 //angular material table
 import { MatPaginator } from "@angular/material/paginator";
-import { ViewItemService } from "../../../../shared/service/view-item.service";
+import { ItemService } from "../../../../shared/service/item.service";
 import { Products } from "src/app/model/Product";
 
 @Component({
@@ -17,13 +17,13 @@ export class ViewItemComponent implements OnInit {
     "itItemName",
     "itCategory",
     "itQuantity",
-    "itPrice",
+    "itPrice"
   ];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   _dataSource$: Observable<Products[]>;
 
-  constructor(private productListService: ViewItemService) {}
+  constructor(private productListService: ItemService) {}
 
   ngOnInit(): void {
     this._dataSource$ = this.productListService.fetchAll();
