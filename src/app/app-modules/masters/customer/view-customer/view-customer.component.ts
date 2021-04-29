@@ -15,9 +15,7 @@ export class ViewCustomerComponent implements OnInit {
   displayedColumns = [
     "itCustomerCode",
     "itCustomerFirstName",
-    "itCustomerLastName",
     "itAddress",
-    "itAge"
   ];
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;

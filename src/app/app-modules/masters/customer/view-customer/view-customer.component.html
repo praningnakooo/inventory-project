@@ -8,39 +8,23 @@
             <ng-container matColumnDef="itCustomerCode">
                 <mat-header-cell *matHeaderCellDef> Customer ID </mat-header-cell>
                 <mat-cell *matCellDef="let customer">
-                    {{ customer.customer_id }}
+                    {{ customer.customers_id }}
                 </mat-cell>
             </ng-container>
 
             <!-- Name Column -->
             <ng-container matColumnDef="itCustomerFirstName">
-                <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef> Customers Name </mat-header-cell>
                 <mat-cell *matCellDef="let customer">
-                    {{ customer.customer_name }}
+                    {{ customer.customers_name }}
                 </mat-cell>
-            </ng-container>
-
-            <!-- Name Column -->
-            <ng-container matColumnDef="itCustomerLastName">
-                <mat-header-cell *matHeaderCellDef>Last Name</mat-header-cell>
-                <mat-cell *matCellDef="let customer">
-                    {{ customer.last_name }}
-                </mat-cell>
-            </ng-container>
+            </ng-container>           
 
             <!-- Name Column -->
             <ng-container matColumnDef="itAddress">
                 <mat-header-cell *matHeaderCellDef>Address</mat-header-cell>
                 <mat-cell *matCellDef="let customer">
                     {{ customer.address }}
-                </mat-cell>
-            </ng-container>
-
-            <!-- Name Column -->
-            <ng-container matColumnDef="itAge">
-                <mat-header-cell *matHeaderCellDef>Age</mat-header-cell>
-                <mat-cell *matCellDef="let customer">
-                    {{ customer.age }}
                 </mat-cell>
             </ng-container>
 
