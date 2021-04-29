@@ -3,8 +3,8 @@ import { Observable } from "rxjs";
 
 //angular material table
 import { MatPaginator } from "@angular/material/paginator";
-import { ViewCustomerService } from "./view-customer.service";
 import { CustomerList } from "src/app/model/Customer";
+import { CustomerService } from "src/app/shared/service/customer.service";
 
 @Component({
   selector: "app-viewcustomer",
@@ -23,7 +23,7 @@ export class ViewCustomerComponent implements OnInit {
 
 
   constructor(
-    private customerListService: ViewCustomerService) {}
+    private customerListService: CustomerService) {}
 
   ngOnInit():  void {
     this._dataSource$ = this.customerListService.fetchAll();
