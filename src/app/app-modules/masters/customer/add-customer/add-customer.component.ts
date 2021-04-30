@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Customer } from "src/app/model/Customer.model";
 import { FormBuilder, Form, FormGroup, Validators } from "@angular/forms";
-import { CustomerService } from "../customer.service";
+import { CustomerService } from "src/app/shared/service/customer.service";
 import { all } from "q";
 import { Observable } from "rxjs";
 
