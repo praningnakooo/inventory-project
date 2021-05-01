@@ -21,6 +21,7 @@ export class QuotationComponent implements OnInit {
     private http: HttpClient) { }
 
   ngOnInit() {
+    
   }
 
 }
