@@ -27,6 +27,7 @@ import { ViewOrdersComponent } from './orders/view-orders/view-orders.component'
 import { AddOrdersComponent } from './orders/add-orders/add-orders.component';
 import { ViewCategoryComponent } from './category/view-category/view-category.component';
 import { AddCategoryComponent } from './category/add-category/add-category.component';
+import { ViewUserComponent } from './users/view-user/view-user.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { AddCategoryComponent } from './category/add-category/add-category.compo
     AddOrdersComponent,
     ViewCategoryComponent,
     AddCategoryComponent,
+    ViewUserComponent,
   ],
   imports: [
     CommonModule,

@@ -13,6 +13,7 @@ import { AddOrdersComponent } from './orders/add-orders/add-orders.component';
 import { ViewOrdersComponent } from './orders/view-orders/view-orders.component';
 import { ViewCategoryComponent } from './category/view-category/view-category.component';
 import { AddCategoryComponent } from './category/add-category/add-category.component';
+import { ViewUserComponent } from './users/view-user/view-user.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,10 @@ const routes: Routes = [
   {
     path: "categories/add",
     component: AddCategoryComponent
+  },
+  {
+    path: "users/view",
+    component: ViewUserComponent
   },
   {
     path: "quote-master",
