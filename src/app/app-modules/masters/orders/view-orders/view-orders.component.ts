@@ -23,9 +23,9 @@ export class ViewOrdersComponent implements OnInit {
 
 
   constructor(
-    private customerListService: OrderService) { }
+    private orderListService: OrderService) { }
 
   ngOnInit(): void {
-    this._dataSource$ = this.customerListService.fetchAll();
+    this._dataSource$ = this.orderListService.fetchAll();
   }
 }
