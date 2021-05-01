@@ -21,7 +21,10 @@ export class QuotationComponent implements OnInit {
     private http: HttpClient) { }
 
   ngOnInit() {
+<<<<<<< HEAD
     
+=======
+>>>>>>> parent of ae48088... delete quotation and enquiry
   }
 
 }
