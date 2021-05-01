@@ -5,7 +5,6 @@ import { CustomerService } from "src/app/shared/service/customer.service";
 import { all } from "q";
 import { Observable } from "rxjs";
 
-
 @Component({
   selector: "app-add-customer",
   templateUrl: "./add-customer.component.html",
