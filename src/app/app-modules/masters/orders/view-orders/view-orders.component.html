@@ -1,0 +1,52 @@
+<section class="content">
+  <div class="box-header with-border box box-primary" style="background: white; box-shadow: none">
+      <div class="box-header with-border">
+          <h3 class="box-title">ORDERS</h3>
+      </div>
+      <mat-table #table [dataSource]="_dataSource$ | async">
+          <!-- Position Column -->
+          <ng-container matColumnDef="itOrdersCode">
+              <mat-header-cell *matHeaderCellDef> Orders ID </mat-header-cell>
+              <mat-cell *matCellDef="let orders">
+                  {{ orders.orders_id }}
+              </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="itOrdersCustomerName">
+              <mat-header-cell *matHeaderCellDef> Customers Name </mat-header-cell>
+              <mat-cell *matCellDef="let orders">
+                  {{ orders.customers_name }}
+              </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="itOrdersCustomerAddress">
+              <mat-header-cell *matHeaderCellDef>Address</mat-header-cell>
+              <mat-cell *matCellDef="let orders">
+                  {{ orders.address }}
+              </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+          <span style="position: absolute; right: 0;">
+            <button mat-icon-button>
+              <mat-icon color="primary">
+                edit
+              </mat-icon>
+            </button>
+            <button mat-icon-button>
+              <mat-icon color="warn">
+                delete
+              </mat-icon>
+            </button>
+          </span>
+      </mat-table>
+
+      <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
+      </mat-paginator>
+  </div>
+
+  <!-- <pre>{{ _items.value | json }}</pre> -->
+</section>

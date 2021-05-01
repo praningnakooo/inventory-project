@@ -23,6 +23,8 @@ import { AddItemComponent } from "./item/add-item/add-item.component";
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ViewOrdersComponent } from './orders/view-orders/view-orders.component';
+import { AddOrdersComponent } from './orders/add-orders/add-orders.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SignupComponent,
     LoginComponent,
     DashboardComponent,
+    ViewOrdersComponent,
+    AddOrdersComponent,
   ],
   imports: [
     CommonModule,
