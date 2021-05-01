@@ -1,4 +1,3 @@
-
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
@@ -12,6 +11,8 @@ import { QuotationComponent } from './quotation/quotation.component';
 import { SignupComponent } from "./signup/signup.component";
 import { AddOrdersComponent } from './orders/add-orders/add-orders.component';
 import { ViewOrdersComponent } from './orders/view-orders/view-orders.component';
+import { ViewCategoryComponent } from './category/view-category/view-category.component';
+import { AddCategoryComponent } from './category/add-category/add-category.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,14 @@ const routes: Routes = [
   {
     path: "orders/add",
     component: AddOrdersComponent
+  },
+  {
+    path: "categories/view",
+    component: ViewCategoryComponent
+  },
+  {
+    path: "categories/add",
+    component: AddCategoryComponent
   },
   {
     path: "quote-master",

@@ -25,6 +25,8 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ViewOrdersComponent } from './orders/view-orders/view-orders.component';
 import { AddOrdersComponent } from './orders/add-orders/add-orders.component';
+import { ViewCategoryComponent } from './category/view-category/view-category.component';
+import { AddCategoryComponent } from './category/add-category/add-category.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { AddOrdersComponent } from './orders/add-orders/add-orders.component';
     DashboardComponent,
     ViewOrdersComponent,
     AddOrdersComponent,
+    ViewCategoryComponent,
+    AddCategoryComponent,
   ],
   imports: [
     CommonModule,
