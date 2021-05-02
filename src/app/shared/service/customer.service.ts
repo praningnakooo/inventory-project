@@ -34,9 +34,9 @@ export class CustomerService {
     return this.http.get<Customer>(CustomerAPI.getAll);
   }
 
-  _getSingleCustomer(customerId) {
+  _getSingleCustomer(customers_id) {
     return this.http.get<Customer>(
-      `${CustomerAPI.GET_SINGLE_CUSTOMER}/${customerId}`
+      `${CustomerAPI.GET_SINGLE_CUSTOMER}/${customers_id}`
     );
   }
 
