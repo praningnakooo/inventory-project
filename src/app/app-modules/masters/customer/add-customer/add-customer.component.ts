@@ -1,9 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Customer } from "src/app/model/Customer.model";
-import { FormBuilder, Form, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, Validators } from "@angular/forms";
 import { CustomerService } from "src/app/shared/service/customer.service";
-import { MatPaginator } from "@angular/material/paginator";
-import { ViewChild } from "@angular/core";
 
 @Component({
   selector: "app-add-customer",
@@ -11,15 +9,13 @@ import { ViewChild } from "@angular/core";
   styleUrls: ["./add-customer.component.css"]
 })
 export class AddCustomerComponent implements OnInit {
-  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   //variables start
-  btnText = "ADD";
   _customerDetails: Customer;
 
   _customerMasterForm = this.fb.group({
-      customer_id: ["", Validators.required],
-      customer_name: ["", Validators.required],
+      customers_id: ["", Validators.required],
+      customers_name: ["", Validators.required],
       address: ["", Validators.required]
     });
   //variables end
@@ -44,7 +40,6 @@ export class AddCustomerComponent implements OnInit {
   }
 
   resetFormClickHandler() {
-    this.btnText = "ADD";
     this._customerMasterForm.reset();
   }
 }

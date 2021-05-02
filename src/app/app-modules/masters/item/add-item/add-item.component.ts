@@ -2,8 +2,6 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { ItemService } from "src/app/shared/service/item.service";
 import { Item } from "src/app/model/Item.model";
-import { HttpClient } from "@angular/common/http";
-import { MatPaginator } from "@angular/material/paginator";
 
 @Component({
   selector: "app-add-item",
@@ -11,11 +9,8 @@ import { MatPaginator } from "@angular/material/paginator";
   styleUrls: ["./add-item.component.css"],
 })
 export class AddItemComponent implements OnInit {
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-
   //variables start
-  btnText = "ADD";
-  _itemDetails : Item;
+  _itemDetails: Item;
 
   _itemMasterForm = this.fb.group({
     item_id: ["", Validators.required],
@@ -46,7 +41,6 @@ export class AddItemComponent implements OnInit {
   }
 
   resetFormClickHandler() {
-    this.btnText = "ADD";
     this._itemMasterForm.reset();
   }
 }
