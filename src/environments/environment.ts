@@ -22,8 +22,8 @@ export const ItemAPI = {
   GET_SINGLE_ITEM: `${URL}/items`
 };
 export const CategoryAPI = {
-  getAll: `${URL}/category`,
-  GET_SINGLE_CATEGORY: `${URL}/category`
+  getAll: `${URL}/categories`,
+  GET_SINGLE_CATEGORY: `${URL}/categories`
 };
 export const OrderAPI = {
   getAll: `${URL}/orders`,
@@ -35,7 +35,7 @@ export const Masters = {
   customer: `${URL}/customers`,
   item: `${URL}/items`,
   order: `${URL}/orders`,
-  category: `${URL}/category`
+  category: `${URL}/categories`
 };
 
 

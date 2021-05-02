@@ -30,9 +30,9 @@ export class AddCategoryComponent implements OnInit {
     this._categoryService
       ._categoryActions(this._categoryDetails, "ADD")
       .subscribe(apiResponse => {
-        console.log("response after adding an order: ", apiResponse);
+        console.log("response after adding a category: ", apiResponse);
         alert(
-          `Order with ID: ${apiResponse.data[0].order_id} & NAME:${apiResponse.data[0].customers_name} successfully added.`
+          `Category with ID: ${apiResponse.data[0].category_id} & NAME:${apiResponse.data[0].category_name} successfully added.`
         );
       });
     alert(" ");

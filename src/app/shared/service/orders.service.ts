@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 import { Order } from './../../model/Order';
 import { ErrorHandlerService } from "./error-handler.service";
 import { catchError, tap } from "rxjs/operators";
-import { ItemAPI, Masters } from "src/environments/environment";
+import { ItemAPI, Masters, OrderAPI } from "src/environments/environment";
 
 @Injectable({
   providedIn: "root",
@@ -40,12 +40,12 @@ export class OrderService {
   }
 
   getAllItem() {
-    return this.http.get<Order[]>(ItemAPI.getAll);
+    return this.http.get<Order[]>(OrderAPI.getAll);
   }
 
   _getSingleItem(orders_id) {
     return this.http.get<Order[]>(
-      `${ItemAPI.GET_SINGLE_ITEM}/${orders_id}`
+      `${OrderAPI.GET_SINGLE_ORDER}/${orders_id}`
     );
   }
 }
