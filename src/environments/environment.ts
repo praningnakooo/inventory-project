@@ -1,6 +1,3 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
 
 export const environment = {
   production: false,
@@ -10,7 +7,7 @@ export const environment = {
   ITEMS_GET_SINGLE: "http://localhost:4200/items/",
   ITEMS_UPDATE_SINGLE_ITEM: "http://localhost:4200/items",
   ITEMS_DELETE_SINGLE: "http://localhost:4200/items/",
-  ITEMS_CREATE_SINGLE: "http://localhost:4200/item",
+  ITEMS_CREATE_SINGLE: "http://localhost:4200/items",
   ITEMS_SINGLE_ITEM_PAGINATION: "http://localhost:4200/items/pagination"
 };
 
@@ -28,7 +25,8 @@ export const ItemAPI = {
 export const Masters = {
   source: `${URL}/source`,
   customer: `${URL}/customers`,
-  item: `${URL}/items`
+  item: `${URL}/items`,
+  order: `${URL}/orders`
 };
 
 

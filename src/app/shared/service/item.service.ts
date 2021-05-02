@@ -45,9 +45,9 @@ export class ItemService {
     return this.http.get<Products[]>(ItemAPI.getAll);
   }
 
-  _getSingleItem(itemId) {
+  _getSingleItem(item_id) {
     return this.http.get<Products[]>(
-      `${ItemAPI.GET_SINGLE_ITEM}/${itemId}`
+      `${ItemAPI.GET_SINGLE_ITEM}/${item_id}`
     );
   }
 }

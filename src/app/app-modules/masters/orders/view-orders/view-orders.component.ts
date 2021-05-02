@@ -3,7 +3,7 @@ import { Observable } from "rxjs";
 
 //angular material table
 import { MatPaginator } from "@angular/material/paginator";
-import { Orders } from './../../../../model/Order';
+import { Order } from './../../../../model/Order';
 import { OrderService } from './../../../../shared/service/orders.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class ViewOrdersComponent implements OnInit {
   ];
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  _dataSource$!: Observable<Orders[]>;
+  _dataSource$!: Observable<Order[]>;
 
 
   constructor(

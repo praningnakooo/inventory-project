@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Orders } from './../../model/Order';
+import { Order } from './../../model/Order';
 import { ErrorHandlerService } from "./error-handler.service";
 import { catchError, tap } from "rxjs/operators";
 import { ItemAPI, Masters } from "src/environments/environment";
@@ -22,39 +22,30 @@ export class OrderService {
 
   ) {}
 
-  fetchAll(): Observable<Orders[]> {
+  fetchAll(): Observable<Order[]> {
     return this.http
-      .get<Orders[]>(this.url, { responseType: "json" })
+      .get<Order[]>(this.url, { responseType: "json" })
       .pipe(
         tap((_) => console.log("fetched orders")),
         catchError(
-          this.errorHandlerService.handleError<Orders[]>("fetchAll", [])
+          this.errorHandlerService.handleError<Order[]>("fetchAll", [])
         )
       );
   }
 
-  _itemActions(model, actionType) {
-    return this.http.post<any>(`${Masters.item}/${actionType}`, model, {
+  _orderActions(model, actionType) {
+    return this.http.post<any>(`${Masters.order}/${actionType}`, model, {
       headers: this.httpHeaders
     });
   }
 
   getAllItem() {
-    return this.http.get<Orders[]>(ItemAPI.getAll);
+    return this.http.get<Order[]>(ItemAPI.getAll);
   }
 
-  _getSingleItem(itemId) {
-    return this.http.get<Orders[]>(
-      `${ItemAPI.GET_SINGLE_ITEM}/${itemId}`
+  _getSingleItem(orders_id) {
+    return this.http.get<Order[]>(
+      `${ItemAPI.GET_SINGLE_ITEM}/${orders_id}`
     );
   }
-  // _getSources(actionType) {
-  //   return this.http.get<any>(`${Masters.source}/${actionType}`);
-  // }
-  // _getAreaLocation() {
-  //   return this.http.get<any>(`${Masters.areaLocation}`);
-  // }
-  // _getAllItems() {
-  //   return this.http.get<any>(ItemMaster.GET_ALL_ITEMS);
-  // }
 }
