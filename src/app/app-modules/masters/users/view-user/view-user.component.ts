@@ -27,6 +27,6 @@ export class ViewUserComponent implements OnInit {
     private userListService: UserService) { }
 
   ngOnInit(): void {
-    this._dataSource$ = this.userListService.fetchAll();
+    this._dataSource$ = this.userListService._fetchAll();
   }
 }

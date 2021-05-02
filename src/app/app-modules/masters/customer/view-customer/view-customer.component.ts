@@ -26,7 +26,7 @@ export class ViewCustomerComponent implements OnInit {
     private customerListService: CustomerService) {}
 
   ngOnInit():  void {
-    this._dataSource$ = this.customerListService.fetchAll();
+    this._dataSource$ = this.customerListService._fetchAll();
   }
   }
 

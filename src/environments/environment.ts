@@ -15,7 +15,7 @@ const URL = "http://localhost:4200";
 
 export const CustomerAPI = {
   getAll: `${URL}/customers`,
-  GET_SINGLE_CUSTOMER: `${URL}/customer`
+  GET_SINGLE_CUSTOMER: `${URL}/customers`
 };
 export const ItemAPI = {
   getAll: `${URL}/items`,

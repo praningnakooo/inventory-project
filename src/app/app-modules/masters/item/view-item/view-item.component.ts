@@ -26,6 +26,6 @@ export class ViewItemComponent implements OnInit {
   constructor(private productListService: ItemService) {}
 
   ngOnInit(): void {
-    this._dataSource$ = this.productListService.fetchAll();
+    this._dataSource$ = this.productListService._fetchAll();
   }
 }

@@ -24,7 +24,7 @@ export class ItemService {
 
   ) {}
 
-  fetchAll(): Observable<Products[]> {
+  _fetchAll(): Observable<Products[]> {
     return this.http
       .get<Products[]>(this.url, { responseType: "json" })
       .pipe(
@@ -41,7 +41,7 @@ export class ItemService {
     });
   }
 
-  getAllItem() {
+  _getAllItem() {
     return this.http.get<Products[]>(ItemAPI.getAll);
   }
 

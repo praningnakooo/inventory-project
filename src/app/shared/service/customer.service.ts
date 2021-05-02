@@ -30,7 +30,7 @@ export class CustomerService {
     });
   }
 
-  getAllCustomer() {
+  _getAllCustomer() {
     return this.http.get<Customer>(CustomerAPI.getAll);
   }
 
@@ -40,7 +40,7 @@ export class CustomerService {
     );
   }
 
-  fetchAll(): Observable<CustomerList[]> {
+  _fetchAll(): Observable<CustomerList[]> {
     return this.http
       .get<CustomerList[]>(this.url, { responseType: "json" })
       .pipe(

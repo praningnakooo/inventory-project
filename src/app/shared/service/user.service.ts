@@ -21,7 +21,7 @@ export class UserService {
     private errorHandlerService: ErrorHandlerService,
   ) {}
 
-  fetchAll(): Observable<User[]> {
+  _fetchAll(): Observable<User[]> {
     return this.http
       .get<User[]>(this.url, { responseType: "json" })
       .pipe(
@@ -38,7 +38,7 @@ export class UserService {
     });
   }
 
-  getAllItem() {
+  _getAllItem() {
     return this.http.get<User[]>(ItemAPI.getAll);
   }
 
@@ -47,13 +47,4 @@ export class UserService {
       `${ItemAPI.GET_SINGLE_ITEM}/${itemId}`
     );
   }
-  // _getSources(actionType) {
-  //   return this.http.get<any>(`${Masters.source}/${actionType}`);
-  // }
-  // _getAreaLocation() {
-  //   return this.http.get<any>(`${Masters.areaLocation}`);
-  // }
-  // _getAllItems() {
-  //   return this.http.get<any>(ItemMaster.GET_ALL_ITEMS);
-  // }
 }

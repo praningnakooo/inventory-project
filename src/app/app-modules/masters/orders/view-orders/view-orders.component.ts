@@ -26,6 +26,6 @@ export class ViewOrdersComponent implements OnInit {
     private orderListService: OrderService) { }
 
   ngOnInit(): void {
-    this._dataSource$ = this.orderListService.fetchAll();
+    this._dataSource$ = this.orderListService._fetchAll();
   }
 }

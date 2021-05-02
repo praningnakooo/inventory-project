@@ -25,7 +25,7 @@ export class ViewCategoryComponent implements OnInit {
     private categoryListService: CategoryService) { }
 
   ngOnInit(): void {
-    this._dataSource$ = this.categoryListService.fetchAll();
+    this._dataSource$ = this.categoryListService._fetchAll();
   }
 }
 

@@ -22,7 +22,7 @@ export class OrderService {
 
   ) {}
 
-  fetchAll(): Observable<Order[]> {
+  _fetchAll(): Observable<Order[]> {
     return this.http
       .get<Order[]>(this.url, { responseType: "json" })
       .pipe(
@@ -39,7 +39,7 @@ export class OrderService {
     });
   }
 
-  getAllItem() {
+  _getAllItem() {
     return this.http.get<Order[]>(OrderAPI.getAll);
   }
 
