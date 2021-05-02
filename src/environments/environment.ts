@@ -26,7 +26,6 @@ export const ItemAPI = {
 };
 
 export const Masters = {
-  areaLocation: `${URL}/arealocation`,
   source: `${URL}/source`,
   customer: `${URL}/customers`,
   item: `${URL}/items`

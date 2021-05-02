@@ -3,7 +3,7 @@
         <div class="box-header with-border">
             <h3 class="box-title">Item Master</h3>
         </div>
-        <form [formGroup]="_itemMasterForm">
+        <form [formGroup]="_itemMasterForm" style="display:flex; flex-direction: column;">
             <div class="form-group col-md-4">
                 <label>Item Code</label>
                 <input type="text" class="form-control" placeholder="Enter Item Code" formControlName="item_id" />
@@ -25,18 +25,19 @@
                 <input type="text" class="form-control" placeholder="Enter the Price of the Product" formControlName="price" />
             </div>
         </form>
-    </div>
 
-    <div class="box-footer col-md-12" style="display:flex;">
-        <div class="mr-1point5-pr">
-            <button type="submit" class="btn btn-primary ml-4" (click)="onSubmit()">
+
+        <div class="box-footer col-md-12" style="display:flex;">
+            <div class="mr-1point5-pr">
+                <button type="submit" class="btn btn-primary ml-4" (click)="onSubmit()">
         ADD ITEM
       </button>
-        </div>
-        <div class="mr-1point5-pr">
-            <button type="submit" class="btn btn-info" (click)="resetFormClickHandler()">
+            </div>
+            <div class="mr-1point5-pr">
+                <button type="submit" class="btn btn-info" (click)="resetFormClickHandler()">
         RESET FORM
       </button>
+            </div>
         </div>
     </div>
 </section>

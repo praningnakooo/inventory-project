@@ -10,11 +10,13 @@ import { ItemAPI, Masters } from "src/environments/environment";
   providedIn: "root",
 })
 export class ItemService {
+  // Global Variables Start
   private url = "http://localhost:3000/products";
 
   httpHeaders = new HttpHeaders({
     "Content-Type": "application/json"
   });
+  // Global Variables End
 
   constructor(
     private http: HttpClient,
@@ -48,13 +50,4 @@ export class ItemService {
       `${ItemAPI.GET_SINGLE_ITEM}/${itemId}`
     );
   }
-  // _getSources(actionType) {
-  //   return this.http.get<any>(`${Masters.source}/${actionType}`);
-  // }
-  // _getAreaLocation() {
-  //   return this.http.get<any>(`${Masters.areaLocation}`);
-  // }
-  // _getAllItems() {
-  //   return this.http.get<any>(ItemMaster.GET_ALL_ITEMS);
-  // }
 }

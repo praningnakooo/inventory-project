@@ -4,5 +4,5 @@ export class Item {
   category_id: string;
   quantity: number;
   price: number;
-  csCreatedBy: string;
+  createdBy: string;
 }

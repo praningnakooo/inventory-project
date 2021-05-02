@@ -20,10 +20,10 @@ export class CustomerService {
     "Content-Type": "application/json"
   });
   /* global variables end */
+
   constructor(private http: HttpClient,
     private errorHandlerService: ErrorHandlerService) {}
 
-  customerOperation(action) {}
   _customerActions(model, actionType) {
     return this.http.post<any>(`${Masters.customer}/${actionType}`, model, {
       headers: this.httpHeaders
@@ -38,12 +38,6 @@ export class CustomerService {
     return this.http.get<Customer>(
       `${CustomerAPI.GET_SINGLE_CUSTOMER}/${customerId}`
     );
-  }
-  _getSources(actionType) {
-    return this.http.get<any>(`${Masters.source}/${actionType}`);
-  }
-  _getAreaLocation() {
-    return this.http.get<any>(`${Masters.areaLocation}`);
   }
 
   fetchAll(): Observable<CustomerList[]> {
