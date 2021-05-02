@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 import { Category } from './../../model/Category';
 import { ErrorHandlerService } from "./error-handler.service";
 import { catchError, tap } from "rxjs/operators";
-import { ItemAPI, Masters } from "src/environments/environment";
+import { CategoryAPI, ItemAPI, Masters, OrderAPI } from "src/environments/environment";
 
 @Injectable({
   providedIn: "root",
@@ -22,7 +22,7 @@ export class CategoryService {
 
   ) {}
 
-  fetchAll(): Observable<Category[]> {
+  _fetchAll(): Observable<Category[]> {
     return this.http
       .get<Category[]>(this.url, { responseType: "json" })
       .pipe(
@@ -33,19 +33,19 @@ export class CategoryService {
       );
   }
 
-  _itemActions(model, actionType) {
-    return this.http.post<any>(`${Masters.item}/${actionType}`, model, {
+  _categoryActions(model, actionType) {
+    return this.http.post<any>(`${Masters.category}/${actionType}`, model, {
       headers: this.httpHeaders
     });
   }
 
-  getAllItem() {
-    return this.http.get<Category[]>(ItemAPI.getAll);
+  _getAllCategory() {
+    return this.http.get<Category[]>(CategoryAPI.getAll);
   }
 
-  _getSingleItem(itemId) {
+  _getSingleCategory(category_id) {
     return this.http.get<Category[]>(
-      `${ItemAPI.GET_SINGLE_ITEM}/${itemId}`
+      `${CategoryAPI.GET_SINGLE_CATEGORY}/${category_id}`
     );
   }
   // _getSources(actionType) {

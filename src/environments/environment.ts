@@ -21,12 +21,21 @@ export const ItemAPI = {
   getAll: `${URL}/items`,
   GET_SINGLE_ITEM: `${URL}/items`
 };
+export const CategoryAPI = {
+  getAll: `${URL}/category`,
+  GET_SINGLE_CATEGORY: `${URL}/category`
+};
+export const OrderAPI = {
+  getAll: `${URL}/orders`,
+  GET_SINGLE_ORDER: `${URL}/orders`
+};
 
 export const Masters = {
   source: `${URL}/source`,
   customer: `${URL}/customers`,
   item: `${URL}/items`,
-  order: `${URL}/orders`
+  order: `${URL}/orders`,
+  category: `${URL}/category`
 };
 
 
