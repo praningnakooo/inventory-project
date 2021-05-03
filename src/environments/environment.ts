@@ -11,7 +11,7 @@ export const environment = {
   ITEMS_SINGLE_ITEM_PAGINATION: "http://localhost:4200/items/pagination"
 };
 
-const URL = "http://localhost:4200";
+const URL = "http://localhost:3000";
 
 export const CustomerAPI = {
   getAll: `${URL}/customers`,
@@ -23,7 +23,8 @@ export const ItemAPI = {
 };
 export const CategoryAPI = {
   getAll: `${URL}/categories`,
-  GET_SINGLE_CATEGORY: `${URL}/categories`
+  GET_SINGLE_CATEGORY: `${URL}/categories`,
+  ADD_SINGLE_CATEGORY: `${URL}/categories`
 };
 export const OrderAPI = {
   getAll: `${URL}/orders`,

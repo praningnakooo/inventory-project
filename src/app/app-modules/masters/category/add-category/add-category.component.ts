@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Category } from 'src/app/model/Category';
 import { CategoryService } from 'src/app/shared/service/category.service';
+import { CategoryAPI } from 'src/environments/environment';
 
 @Component({
   selector: 'app-add-category',
@@ -14,7 +15,6 @@ export class AddCategoryComponent implements OnInit {
   _categoryDetails: Category;
 
   _categoryMasterForm = this.fb.group({
-      category_id: ["", Validators.required],
       category_name: ["", Validators.required]
     });
   //variables end
@@ -29,10 +29,10 @@ export class AddCategoryComponent implements OnInit {
     console.log(JSON.stringify(this._categoryMasterForm.value));
     this._categoryService
       ._categoryActions(this._categoryDetails, "ADD")
-      .subscribe(apiResponse => {
-        console.log("response after adding a category: ", apiResponse);
+      .subscribe(CategoryAPI => {
+        console.log("response after adding a category: ", CategoryAPI);
         alert(
-          `Category with ID: ${apiResponse.data[0].category_id} & NAME:${apiResponse.data[0].category_name} successfully added.`
+          `NAME:${CategoryAPI} successfully added.`
         );
       });
     alert(" ");
