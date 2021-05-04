@@ -33,7 +33,6 @@ export class AddCategoryComponent implements OnInit {
   onSubmit() {
     console.log(this._categoryMasterForm.value);
     if (this.btnText === "ADD") {
-      alert("Adding item");
       //creating new single item
       const httpOptions = {
         headers: new HttpHeaders({
@@ -48,25 +47,10 @@ export class AddCategoryComponent implements OnInit {
         )
         .subscribe(data => {
           this.response = data;
-          if (this.response.response.respCode === "0000") {
             //this.getAllItems();
             alert("Item Successfully added.");
             // this._reloadTableData();
-          }
         });
-    } else if (this.btnText === "UPDATE") {
-      alert("updating single item");
-      //updating single item
-      const httpOptions = {
-        headers: new HttpHeaders({
-          "Content-Type": "application/json"
-        })
-      };
-      return this.http
-        .post(
-          "http://localhost:3000/categories",
-          this._categoryMasterForm.value,
-          httpOptions);
     }
   }
 
