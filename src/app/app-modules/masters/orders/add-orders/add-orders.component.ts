@@ -1,46 +1,56 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { Order } from 'src/app/model/Order';
-import { OrderService } from 'src/app/shared/service/orders.service';
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, Validators } from "@angular/forms";
+import { Order } from "src/app/model/Order";
 
 @Component({
-  selector: 'app-add-orders',
-  templateUrl: './add-orders.component.html',
-  styleUrls: ['./add-orders.component.css']
+  selector: "app-add-orders",
+  templateUrl: "./add-orders.component.html",
+  styleUrls: ["./add-orders.component.css"],
 })
 export class AddOrdersComponent implements OnInit {
+  //variables start
+  _orderDetails: Order;
+  btnText = "ADD";
+  response: any;
 
-   //variables start
-   _orderDetails: Order;
+  _orderMasterForm = this.fb.group({
+    orders_id: ["", Validators.required],
+    customers_name: ["", Validators.required],
+    address: ["", Validators.required],
+  });
+  //variables end
+  constructor(private fb: FormBuilder, private http: HttpClient) {
+    this._orderDetails = new Order;
+  }
 
-   _orderMasterForm = this.fb.group({
-       orders_id: ["", Validators.required],
-       customers_name: ["", Validators.required],
-       address: ["", Validators.required]
-     });
-   //variables end
-   constructor(private fb: FormBuilder, private _orderService: OrderService) {
-     this._orderDetails = new Order();
-   }
+  ngOnInit() {}
 
-   ngOnInit() {}
+  onSubmit() {
+    console.log(this._orderMasterForm);
+    if (this.btnText === "ADD") {
+      //creating new single customer
+      const httpOptions = {
+        headers: new HttpHeaders({
+          "Content-Type": "application/json",
+        }),
+      };
+      return this.http
+        .post(
+          "http://localhost:3000/orders",
+          this._orderMasterForm.value,
+          httpOptions
+        )
+        .subscribe((data) => {
+          this.response = data;
+          //this.getAllItems();
+          alert("Order Successfully added.");
+          this.resetFormClickHandler();
+        });
+    }
+  }
 
-   onSubmit() {
-     //adding address in main model
-     console.log(JSON.stringify(this._orderMasterForm.value));
-     this._orderService
-       ._orderActions(this._orderDetails, "ADD")
-       .subscribe(apiResponse => {
-         console.log("response after adding an order: ", apiResponse);
-         alert(
-           `Order with ID: ${apiResponse.data[0].order_id} & NAME:${apiResponse.data[0].customers_name} successfully added.`
-         );
-       });
-     alert(" ");
-   }
-
-   resetFormClickHandler() {
-     this._orderMasterForm.reset();
-   }
-
+  resetFormClickHandler() {
+    this._orderMasterForm.reset();
+  }
 }

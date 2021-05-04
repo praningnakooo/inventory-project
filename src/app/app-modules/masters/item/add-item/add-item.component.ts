@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
-import { ItemService } from "src/app/shared/service/item.service";
 import { Item } from "src/app/model/Item.model";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Component({
   selector: "app-add-item",
@@ -11,33 +11,43 @@ import { Item } from "src/app/model/Item.model";
 export class AddItemComponent implements OnInit {
   //variables start
   _itemDetails: Item;
+  btnText = "ADD";
+  response: any;
 
   _itemMasterForm = this.fb.group({
-    item_id: ["", Validators.required],
     item_name: ["", Validators.required],
     category_name: ["", Validators.required],
     quantity: ["", Validators.required],
     price: ["", Validators.required]
   });
 
-  constructor(private fb: FormBuilder, private _itemService: ItemService) {
+  constructor(private fb: FormBuilder, private http: HttpClient) {
     this._itemDetails = new Item();
   }
 
   ngOnInit() {}
 
   onSubmit() {
-    //adding address in main model
-    console.log(JSON.stringify(this._itemMasterForm.value));
-    this._itemService
-      ._itemActions(this._itemDetails, "ADD")
-      .subscribe(apiResponse => {
-        console.log("response after adding an item: ", apiResponse);
-        alert(
-          `Item with ID: ${apiResponse.data[0].item_id} & NAME:${apiResponse.data[0].item_name} successfully added.`
-        );
-      });
-    alert(" ");
+    if (this.btnText === "ADD") {
+      //creating new single item
+      const httpOptions = {
+        headers: new HttpHeaders({
+          "Content-Type": "application/json"
+        })
+      };
+      return this.http
+        .post(
+          "http://localhost:3000/products",
+          this._itemMasterForm.value,
+          httpOptions
+        )
+        .subscribe(data => {
+          this.response = data;
+            //this.getAllItems();
+            alert("Item Successfully added.");
+            this.resetFormClickHandler();
+        });
+    }
   }
 
   resetFormClickHandler() {

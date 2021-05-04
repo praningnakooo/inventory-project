@@ -1,8 +1,7 @@
 export class Item {
   customer_id: number;
-  customer_name: string;
-  category_id: string;
+  item_name: string;
+  category_name: string;
   quantity: number;
   price: number;
-  createdBy: string;
 }

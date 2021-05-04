@@ -9,7 +9,6 @@ export const environment = {
   ITEMS_DELETE_SINGLE: "http://localhost:4200/items/",
   ITEMS_CREATE_SINGLE: "http://localhost:4200/items",
   ITEMS_SINGLE_ITEM_PAGINATION: "http://localhost:4200/items/pagination",
-  ADD_SINGLE_CATEGORY: `http://localhost:3000/categories`
 };
 
 const URL = "http://localhost:3000";

@@ -2,8 +2,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Category } from 'src/app/model/Category';
-import { CategoryService } from 'src/app/shared/service/category.service';
-import { CategoryAPI } from 'src/environments/environment';
 
 @Component({
   selector: 'app-add-category',
@@ -13,7 +11,6 @@ import { CategoryAPI } from 'src/environments/environment';
 export class AddCategoryComponent implements OnInit {
 
   //variables start
-  _categoryDetails: Category;
 
   _categoryMasterForm = this.fb.group({
     category_name: ["", Validators.required]
@@ -23,15 +20,12 @@ export class AddCategoryComponent implements OnInit {
   response: any;
 
   //variables end
-  constructor(private fb: FormBuilder, private _categoryService: CategoryService, private http: HttpClient) {
-    this._categoryDetails = new Category;
-
+  constructor(private fb: FormBuilder, private http: HttpClient) {
   }
 
   ngOnInit() {}
 
   onSubmit() {
-    console.log(this._categoryMasterForm.value);
     if (this.btnText === "ADD") {
       //creating new single item
       const httpOptions = {
@@ -47,9 +41,8 @@ export class AddCategoryComponent implements OnInit {
         )
         .subscribe(data => {
           this.response = data;
-            //this.getAllItems();
-            alert("Item Successfully added.");
-            // this._reloadTableData();
+            alert("Category Successfully added.");
+            this.resetFormClickHandler();
         });
     }
   }
