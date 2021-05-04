@@ -34,7 +34,7 @@ export class CategoryService {
   }
 
   _categoryActions(model, actionType) {
-    return this.http.post<Category[]>(`${Masters.category}/${actionType}`, model, {
+    return this.http.post<Category[]>(`${CategoryAPI.ADD_SINGLE_CATEGORY}/${actionType}`, model, {
       headers: this.httpHeaders
     });
   }
