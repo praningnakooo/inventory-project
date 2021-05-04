@@ -5,6 +5,7 @@ import { Observable } from "rxjs";
 import { MatPaginator } from "@angular/material/paginator";
 import { Category } from './../../../../model/Category';
 import { CategoryService } from './../../../../shared/service/category.service';
+import { tap } from "rxjs/operators";
 
 @Component({
   selector: 'app-view-category',
@@ -26,6 +27,12 @@ export class ViewCategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this._dataSource$ = this.categoryListService._fetchAll();
+  }
+
+  delete(category_id: number): void {
+    this._dataSource$ = this.categoryListService
+      ._delete(category_id)
+      .pipe(tap(() => (this._dataSource$ = this.categoryListService._fetchAll())));
   }
 }
 
