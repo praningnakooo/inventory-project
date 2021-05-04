@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 import { Category } from './../../model/Category';
 import { ErrorHandlerService } from "./error-handler.service";
 import { catchError, tap } from "rxjs/operators";
-import { CategoryAPI, ItemAPI, Masters, OrderAPI } from "src/environments/environment";
+import { CategoryAPI, environment, ItemAPI, Masters, OrderAPI } from "src/environments/environment";
 
 @Injectable({
   providedIn: "root",
@@ -15,10 +15,6 @@ export class CategoryService {
   httpHeaders = new HttpHeaders({
     "Content-Type": "application/json"
   });
-
-  httpOptions: { headers: HttpHeaders } = {
-    headers: new HttpHeaders({ "Content-Type": "application/json" }),
-  };
 
   constructor(
     private http: HttpClient,
@@ -37,16 +33,8 @@ export class CategoryService {
       );
   }
 
-  _delete(category_id: number): Observable<any> {
-    const url = `http://localhost:3000/categories/${category_id}`;
-
-    return this.http
-      .delete<Category>(url, this.httpOptions)
-      .pipe(catchError(this.errorHandlerService.handleError<any>("delete")));
-  }
-
-  _categoryActions(model, actionType) {
-    return this.http.post<Category[]>(`${CategoryAPI.ADD_SINGLE_CATEGORY}/${actionType}`, model, {
+  _categoryActions(model) {
+    return this.http.post<any>(`${environment.ADD_SINGLE_CATEGORY}`, model, {
       headers: this.httpHeaders
     });
   }

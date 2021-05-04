@@ -1,5 +1,4 @@
 <section class="content">
-<<<<<<< HEAD
     <div class="box-header with-border box box-primary" style="background: white; box-shadow: none">
         <div class="box-header with-border">
             <h3 class="box-title">CATEGORIES</h3>
@@ -18,8 +17,15 @@
                 <mat-header-cell *matHeaderCellDef> Category Name </mat-header-cell>
                 <mat-cell *matCellDef="let category">
                     {{ category.category_name }}
+                    <span style="position: absolute; right: 30px;">
+            <button mat-icon-button>
+              <mat-icon color="primary"> edit </mat-icon>
+            </button>
+            <button mat-icon-button>
+              <mat-icon (click)="delete(category.category_id)" color="warn"> delete </mat-icon>
+            </button>
+          </span>
                 </mat-cell>
-
             </ng-container>
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
@@ -32,45 +38,4 @@
     </div>
 
     <!-- <pre>{{ _items.value | json }}</pre> -->
-=======
-  <div class="box-header with-border box box-primary" style="background: white; box-shadow: none">
-    <div class="box-header with-border">
-      <h3 class="box-title">CATEGORIES</h3>
-    </div>
-    <mat-table #table [dataSource]="_dataSource$ | async">
-      <!-- Position Column -->
-      <ng-container matColumnDef="itCategoryCode">
-        <mat-header-cell *matHeaderCellDef> Category ID </mat-header-cell>
-        <mat-cell *matCellDef="let category">
-          {{ category.category_id }}
-        </mat-cell>
-      </ng-container>
-
-      <!-- Name Column -->
-      <ng-container matColumnDef="itCategoryName">
-        <mat-header-cell *matHeaderCellDef> Category Name </mat-header-cell>
-        <mat-cell *matCellDef="let category">
-          {{ category.category_name }}
-          <span style="position: absolute; right: 30px;">
-            <button mat-icon-button>
-              <mat-icon color="primary"> edit </mat-icon>
-            </button>
-            <button mat-icon-button>
-              <mat-icon (click)="delete(category.category_id)" color="warn"> delete </mat-icon>
-            </button>
-          </span>
-        </mat-cell>
-      </ng-container>
-
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-
-    </mat-table>
-
-    <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
-    </mat-paginator>
-  </div>
-
-  <!-- <pre>{{ _items.value | json }}</pre> -->
->>>>>>> 083cb96ae9853ce171d0ad88df86aaa3314770f1
 </section>

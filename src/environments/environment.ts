@@ -1,6 +1,6 @@
 
 export const environment = {
-  production: false,
+  production: true,
   //ITEM MASTER MAPPING
 
   ITEMS_GET_ALL: "http://localhost:4200/items",
@@ -8,7 +8,8 @@ export const environment = {
   ITEMS_UPDATE_SINGLE_ITEM: "http://localhost:4200/items",
   ITEMS_DELETE_SINGLE: "http://localhost:4200/items/",
   ITEMS_CREATE_SINGLE: "http://localhost:4200/items",
-  ITEMS_SINGLE_ITEM_PAGINATION: "http://localhost:4200/items/pagination"
+  ITEMS_SINGLE_ITEM_PAGINATION: "http://localhost:4200/items/pagination",
+  ADD_SINGLE_CATEGORY: `http://localhost:3000/categories`
 };
 
 const URL = "http://localhost:3000";
@@ -32,6 +33,7 @@ export const OrderAPI = {
 };
 
 export const Masters = {
+  production: true,
   source: `${URL}/source`,
   customer: `${URL}/customers`,
   item: `${URL}/items`,
