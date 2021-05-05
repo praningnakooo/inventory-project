@@ -14,51 +14,52 @@ import { ViewOrdersComponent } from './orders/view-orders/view-orders.component'
 import { ViewCategoryComponent } from './category/view-category/view-category.component';
 import { AddCategoryComponent } from './category/add-category/add-category.component';
 import { ViewUserComponent } from './users/view-user/view-user.component';
+import { AuthGuard } from './../../shared/service/auth-guard.service';
 
 const routes: Routes = [
   {
     path: "dashboard",
-    component: DashboardComponent
+    component: DashboardComponent, canActivate: [AuthGuard]
   },
   {
     path: "customer/view",
-    component: ViewCustomerComponent
+    component: ViewCustomerComponent, canActivate: [AuthGuard]
   },
   {
     path: "customer/add",
-    component: AddCustomerComponent
+    component: AddCustomerComponent, canActivate: [AuthGuard]
   },
   {
     path: "item/view",
-    component: ViewItemComponent
+    component: ViewItemComponent, canActivate: [AuthGuard]
   },
   {
     path: "item/add",
-    component: AddItemComponent
+    component: AddItemComponent, canActivate: [AuthGuard]
   },
   {
     path: "orders/view",
-    component: ViewOrdersComponent
+    component: ViewOrdersComponent, canActivate: [AuthGuard]
   },
   {
     path: "orders/add",
-    component: AddOrdersComponent
+    component: AddOrdersComponent, canActivate: [AuthGuard]
   },
   {
     path: "categories/view",
-    component: ViewCategoryComponent
+    component: ViewCategoryComponent, canActivate: [AuthGuard]
   },
   {
     path: "categories/add",
-    component: AddCategoryComponent
+    component: AddCategoryComponent, canActivate: [AuthGuard]
   },
   {
     path: "users/view",
-    component: ViewUserComponent
+    component: ViewUserComponent, canActivate: [AuthGuard]
   },
   {
     path: "quote-master",
-    component: QuotationComponent
+    component: QuotationComponent, canActivate: [AuthGuard]
   },
   {
     path: "login",

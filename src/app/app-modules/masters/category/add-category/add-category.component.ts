@@ -1,4 +1,3 @@
-import { AuthService } from './../../../../shared/service/auth.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -12,7 +11,6 @@ import { User } from 'src/app/model/User';
 })
 export class AddCategoryComponent implements OnInit {
   //variables start
-  user_id: Pick<User, "user_id">;
 
   _categoryMasterForm = this.fb.group({
     category_name: ["", Validators.required]
@@ -21,11 +19,10 @@ export class AddCategoryComponent implements OnInit {
   response: any;
 
   //variables end
-  constructor(private fb: FormBuilder, private http: HttpClient, private authService: AuthService) {
+  constructor(private fb: FormBuilder, private http: HttpClient) {
   }
 
   ngOnInit(): void {
-    this.user_id = this.authService.user_id
   }
 
   onSubmit() {

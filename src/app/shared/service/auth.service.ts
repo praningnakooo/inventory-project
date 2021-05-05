@@ -43,7 +43,7 @@ export class AuthService {
         this.user_id = tokenObject.user_id;
         localStorage.setItem("token", tokenObject.token);
         this.isUserLoggedIn$.next(true);
-        this.router.navigate(["view-item"]); //re route to homepage
+        this.router.navigate(["dashboard"]); //re route to homepage
       }),
       catchError(this.errorHandlerService.handleError<{
         token: string; user_id: Pick<User, "user_id">
