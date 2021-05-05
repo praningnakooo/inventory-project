@@ -12,7 +12,7 @@ import { SidebarComponent } from "./shared/sidebar/sidebar.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { HttpClientModule } from "@angular/common/http";
-import { ModalModule } from "ngb-modal";
+import { ModalManager, ModalModule } from "ngb-modal";
 @NgModule({
   declarations: [
     AppComponent,
