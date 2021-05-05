@@ -13,8 +13,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AuthInterceptorService } from './shared/service/auth-interceptor.service';
-import { FormsModule } from "@angular/forms";
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -31,8 +29,6 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule,
-    NgbModule
   ],
   providers: [
     {

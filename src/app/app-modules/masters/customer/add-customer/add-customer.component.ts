@@ -27,7 +27,7 @@ export class AddCustomerComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit() {
-    if (this.btnText === "ADD") {
+
       //creating new single customer
       const httpOptions = {
         headers: new HttpHeaders({
@@ -47,7 +47,7 @@ export class AddCustomerComponent implements OnInit {
             this.resetFormClickHandler();
         });
     }
-  }
+
 
   resetFormClickHandler() {
     this._customerMasterForm.reset();

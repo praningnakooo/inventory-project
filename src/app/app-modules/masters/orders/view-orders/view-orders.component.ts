@@ -5,6 +5,7 @@ import { Observable } from "rxjs";
 import { MatPaginator } from "@angular/material/paginator";
 import { Order } from './../../../../model/Order';
 import { OrderService } from './../../../../shared/service/orders.service';
+import { tap } from "rxjs/operators";
 
 @Component({
   selector: 'app-view-orders',
@@ -21,11 +22,16 @@ export class ViewOrdersComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   _dataSource$!: Observable<Order[]>;
 
-
   constructor(
     private orderListService: OrderService) { }
 
   ngOnInit(): void {
     this._dataSource$ = this.orderListService._fetchAll();
+  }
+
+  delete(orders_id: number): void {
+    this._dataSource$ = this.orderListService
+      ._delete(orders_id)
+      .pipe(tap(() => (this._dataSource$ = this.orderListService._fetchAll())));
   }
 }

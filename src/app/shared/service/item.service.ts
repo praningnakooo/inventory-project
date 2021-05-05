@@ -16,6 +16,9 @@ export class ItemService {
   httpHeaders = new HttpHeaders({
     "Content-Type": "application/json"
   });
+  httpOptions: { headers: HttpHeaders } = {
+    headers: new HttpHeaders({ "Content-Type": "application/json" }),
+  };
   // Global Variables End
 
   constructor(
@@ -34,20 +37,27 @@ export class ItemService {
         )
       );
   }
+  _delete(product_id: number): Observable<any> {
+    const url = `http://localhost:3000/products/${product_id}`;
 
-  _itemActions(model, actionType) {
-    return this.http.post<any>(`${Masters.item}/${actionType}`, model, {
-      headers: this.httpHeaders
-    });
+    return this.http
+      .delete<Products>(url, this.httpOptions)
+      .pipe(catchError(this.errorHandlerService.handleError<any>("delete")));
   }
 
-  _getAllItem() {
-    return this.http.get<Products[]>(ItemAPI.getAll);
-  }
+  // _itemActions(model, actionType) {
+  //   return this.http.post<any>(`${Masters.item}/${actionType}`, model, {
+  //     headers: this.httpHeaders
+  //   });
+  // }
 
-  _getSingleItem(item_id) {
-    return this.http.get<Products[]>(
-      `${ItemAPI.GET_SINGLE_ITEM}/${item_id}`
-    );
-  }
+  // _getAllItem() {
+  //   return this.http.get<Products[]>(ItemAPI.getAll);
+  // }
+
+  // _getSingleItem(item_id) {
+  //   return this.http.get<Products[]>(
+  //     `${ItemAPI.GET_SINGLE_ITEM}/${item_id}`
+  //   );
+  // }
 }

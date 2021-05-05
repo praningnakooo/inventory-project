@@ -28,7 +28,6 @@ export class AddItemComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit() {
-    if (this.btnText === "ADD") {
       //creating new single item
       const httpOptions = {
         headers: new HttpHeaders({
@@ -48,7 +47,7 @@ export class AddItemComponent implements OnInit {
             this.resetFormClickHandler();
         });
     }
-  }
+
 
   resetFormClickHandler() {
     this._itemMasterForm.reset();

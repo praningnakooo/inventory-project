@@ -16,6 +16,10 @@ export class OrderService {
     "Content-Type": "application/json"
   });
 
+  httpOptions: { headers: HttpHeaders } = {
+    headers: new HttpHeaders({ "Content-Type": "application/json" }),
+  };
+
   constructor(
     private http: HttpClient,
     private errorHandlerService: ErrorHandlerService,
@@ -33,19 +37,11 @@ export class OrderService {
       );
   }
 
-  _orderActions(model, actionType) {
-    return this.http.post<any>(`${Masters.order}/${actionType}`, model, {
-      headers: this.httpHeaders
-    });
-  }
+  _delete(orders_id: number): Observable<any> {
+    const url = `http://localhost:3000/orders/${orders_id}`;
 
-  _getAllItem() {
-    return this.http.get<Order[]>(OrderAPI.getAll);
-  }
-
-  _getSingleItem(orders_id) {
-    return this.http.get<Order[]>(
-      `${OrderAPI.GET_SINGLE_ORDER}/${orders_id}`
-    );
+    return this.http
+      .delete<Order>(url, this.httpOptions)
+      .pipe(catchError(this.errorHandlerService.handleError<any>("delete")));
   }
 }

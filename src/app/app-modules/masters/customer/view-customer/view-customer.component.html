@@ -25,23 +25,21 @@
                 <mat-header-cell *matHeaderCellDef>Address</mat-header-cell>
                 <mat-cell *matCellDef="let customer">
                     {{ customer.address }}
+                    <span style="position: absolute; right: 30px;">
+                <button mat-icon-button>
+                  <mat-icon color="primary"> edit </mat-icon>
+                </button>
+                <button mat-icon-button>
+                  <mat-icon (click)="delete(customer.customers_id)" color="warn"> delete </mat-icon>
+                </button>
+              </span>
                 </mat-cell>
             </ng-container>
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-            <span style="position: absolute; right: 0;">
-              <button mat-icon-button>
-                <mat-icon color="primary">
-                  edit
-                </mat-icon>
-              </button>
-              <button mat-icon-button>
-                <mat-icon color="warn">
-                  delete
-                </mat-icon>
-              </button>
-            </span>
+
+
         </mat-table>
 
         <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">

@@ -5,6 +5,7 @@ import { Observable } from "rxjs";
 import { MatPaginator } from "@angular/material/paginator";
 import { CustomerList } from "src/app/model/Customer";
 import { CustomerService } from "src/app/shared/service/customer.service";
+import { tap } from "rxjs/operators";
 
 @Component({
   selector: "app-viewcustomer",
@@ -27,6 +28,12 @@ export class ViewCustomerComponent implements OnInit {
 
   ngOnInit():  void {
     this._dataSource$ = this.customerListService._fetchAll();
+  }
+
+  delete(customers_id: number): void {
+    this._dataSource$ = this.customerListService
+      ._delete(customers_id)
+      .pipe(tap(() => (this._dataSource$ = this.customerListService._fetchAll())));
   }
   }
 

@@ -19,6 +19,9 @@ export class CustomerService {
   httpHeaders = new HttpHeaders({
     "Content-Type": "application/json"
   });
+  httpOptions: { headers: HttpHeaders } = {
+    headers: new HttpHeaders({ "Content-Type": "application/json" }),
+  };
   /* global variables end */
 
   constructor(private http: HttpClient,
@@ -49,5 +52,13 @@ export class CustomerService {
           this.errorHandlerService.handleError<CustomerList[]>("fetchAll", [])
         )
       );
+  }
+
+  _delete(customers_id: number): Observable<any> {
+    const url = `http://localhost:3000/customers/${customers_id}`;
+
+    return this.http
+      .delete<Customer>(url, this.httpOptions)
+      .pipe(catchError(this.errorHandlerService.handleError<any>("delete")));
   }
 }

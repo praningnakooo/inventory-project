@@ -59,8 +59,8 @@ import { ViewUserComponent } from './users/view-user/view-user.component';
     MatIconModule,
     MatInputModule,
     MatListModule,
-    MatToolbarModule,
-    MatIconModule,
+    MatToolbarModule
+
   ]
 })
 export class MastersModule {}

@@ -26,7 +26,6 @@ export class AddOrdersComponent implements OnInit {
 
   onSubmit() {
     console.log(this._orderMasterForm);
-    if (this.btnText === "ADD") {
       //creating new single customer
       const httpOptions = {
         headers: new HttpHeaders({
@@ -46,7 +45,7 @@ export class AddOrdersComponent implements OnInit {
           this.resetFormClickHandler();
         });
     }
-  }
+
 
   resetFormClickHandler() {
     this._orderMasterForm.reset();
