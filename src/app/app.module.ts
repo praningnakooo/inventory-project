@@ -11,8 +11,10 @@ import { CommonMultiSelectComponent } from "./shared/controls/common-multi-selec
 import { SidebarComponent } from "./shared/sidebar/sidebar.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { HttpClientModule } from "@angular/common/http";
-import { ModalModule } from "ngb-modal";
+// import { ModalModule } from "ngb-modal";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { AuthInterceptorService } from './shared/service/auth-interceptor.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,9 +30,15 @@ import { ModalModule } from "ngb-modal";
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ModalModule
+    // ModalModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
