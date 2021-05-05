@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, throwError } from "rxjs";
 import { MatPaginator } from "@angular/material/paginator";
 import { Category } from './../../../../model/Category';
 import { CategoryService } from './../../../../shared/service/category.service';
@@ -43,7 +43,7 @@ export class ViewCategoryComponent implements OnInit {
   document.body.classList.remove('jw-modal-open');
 }
 
-  onUpdate(){}
+update(){}
 
 
   // delete(category_id: number): void {

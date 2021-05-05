@@ -46,12 +46,16 @@
 
                 <div class="form-group col-md-3">
                     <label>Category Name</label>
+                    <input type="email" class="form-control" placeholder="" formControlName="category_id" />
+                </div>
+                <div class="form-group col-md-3">
+                    <label>Category Name</label>
                     <input type="email" class="form-control" placeholder="Enter Category" formControlName="category_name" />
                 </div>
             </form>
             <div class="box-footer col-md-12" style="display: flex;">
                 <div class="mr-1point5-pr">
-                    <button type="submit" class="btn btn-primary" (click)="onUpdate()">ADD CATEGORY</button>
+                    <button type="submit" class="btn btn-primary" (click)="update()">ADD CATEGORY</button>
                 </div>
                 <div class="mr-1point5-pr">
                     <button type="submit" class="btn btn-info" (click)="closeModal()">CANCEL</button>
