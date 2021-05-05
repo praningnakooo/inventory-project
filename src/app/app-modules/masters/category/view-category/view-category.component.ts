@@ -5,6 +5,7 @@ import { Category } from './../../../../model/Category';
 import { CategoryService } from './../../../../shared/service/category.service';
 import { User } from "src/app/model/User";
 import { AuthService } from "src/app/shared/service/auth.service";
+import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-view-category',
@@ -27,23 +28,16 @@ export class ViewCategoryComponent implements OnInit {
   user_id: Pick<User, "user_id">;
 
   constructor(
-    private categoryListService: CategoryService, private authService: AuthService) { }
+    private categoryListService: CategoryService, private modalService: NgbModal, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.user_id = this.authService.user_id;
     this._dataSource$ = this.categoryListService._fetchAll();
   }
 
-  openModal() {
-  document.getElementById('modal-1').style.display = 'block';
-  document.body.classList.add('jw-modal-open');
-}
-  closeModal() {
-  document.getElementById('modal-1').style.display = 'none';
-  document.body.classList.remove('jw-modal-open');
-}
 
-update(){}
+
+// update(){}
 
 
   // delete(category_id: number): void {

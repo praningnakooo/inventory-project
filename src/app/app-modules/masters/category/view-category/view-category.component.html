@@ -19,7 +19,7 @@
                     {{ category.category_name }}
                     <span style="position: absolute; right: 30px;">
             <button mat-icon-button>
-              <mat-icon color="primary" (click)="openModal()"> edit </mat-icon>
+              <mat-icon color="primary" (click)="open(content)"> edit </mat-icon>
             </button>
             <button mat-icon-button>
               <mat-icon (click)="delete(category.category_id)" color="warn"> delete </mat-icon>
@@ -30,7 +30,6 @@
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-
         </mat-table>
 
         <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
@@ -38,30 +37,3 @@
     </div>
     <!-- <pre>{{ _items.value | json }}</pre> -->
 </section>
-
-<div class="jw-modal-wrapper" id="modal-1">
-    <div class="jw-modal">
-        <div class="jw-modal-body">
-            <form [formGroup]="_categoryMasterFormUpdate" style="display:flex; flex-direction: column;">
-
-                <div class="form-group col-md-3">
-                    <label>Category Name</label>
-                    <input type="email" class="form-control" placeholder="" formControlName="category_id" />
-                </div>
-                <div class="form-group col-md-3">
-                    <label>Category Name</label>
-                    <input type="email" class="form-control" placeholder="Enter Category" formControlName="category_name" />
-                </div>
-            </form>
-            <div class="box-footer col-md-12" style="display: flex;">
-                <div class="mr-1point5-pr">
-                    <button type="submit" class="btn btn-primary" (click)="update()">ADD CATEGORY</button>
-                </div>
-                <div class="mr-1point5-pr">
-                    <button type="submit" class="btn btn-info" (click)="closeModal()">CANCEL</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="jw-modal-background"></div>
-</div>
