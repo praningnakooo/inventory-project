@@ -3,10 +3,9 @@ import { Observable } from "rxjs";
 import { MatPaginator } from "@angular/material/paginator";
 import { Category } from './../../../../model/Category';
 import { CategoryService } from './../../../../shared/service/category.service';
-import { ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
-import { ModalComponent, ModalModule, ModalManager } from "ngb-modal";
 import { User } from "src/app/model/User";
 import { AuthService } from "src/app/shared/service/auth.service";
+import { ModalService } from "../../_modal";
 
 @Component({
   selector: 'app-view-category',
@@ -26,13 +25,19 @@ export class ViewCategoryComponent implements OnInit {
 
   constructor(
     private categoryListService: CategoryService,
-    private modalService: ModalModule, private authService: AuthService) { }
+    private modalService: ModalService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.user_id = this.authService.user_id;
     this._dataSource$ = this.categoryListService._fetchAll();
   }
+
+  openModal(id: string) {
+  this.modalService.open(id);
 }
+
+}
+
 
 
 

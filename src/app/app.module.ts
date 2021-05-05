@@ -11,15 +11,10 @@ import { CommonMultiSelectComponent } from "./shared/controls/common-multi-selec
 import { SidebarComponent } from "./shared/sidebar/sidebar.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-<<<<<<< HEAD
-import { HttpClientModule } from "@angular/common/http";
-import { ModalManager, ModalModule } from "ngb-modal";
-=======
 // import { ModalModule } from "ngb-modal";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AuthInterceptorService } from './shared/service/auth-interceptor.service';
 
->>>>>>> e962fbeedecd883e22215413a72beaecccb73d3c
 @NgModule({
   declarations: [
     AppComponent,
