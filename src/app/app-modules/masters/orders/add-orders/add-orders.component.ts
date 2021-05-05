@@ -15,9 +15,7 @@ export class AddOrdersComponent implements OnInit {
   response: any;
 
   _orderMasterForm = this.fb.group({
-    orders_id: ["", Validators.required],
-    customers_name: ["", Validators.required],
-    address: ["", Validators.required],
+    customers_id: ["", Validators.required],
   });
   //variables end
   constructor(private fb: FormBuilder, private http: HttpClient) {

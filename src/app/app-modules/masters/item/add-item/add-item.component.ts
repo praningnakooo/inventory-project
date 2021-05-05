@@ -16,7 +16,7 @@ export class AddItemComponent implements OnInit {
 
   _itemMasterForm = this.fb.group({
     item_name: ["", Validators.required],
-    category_name: ["", Validators.required],
+    category_id: ["", Validators.required],
     quantity: ["", Validators.required],
     price: ["", Validators.required]
   });

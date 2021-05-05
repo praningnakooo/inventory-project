@@ -1,11 +1,8 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { Observable } from "rxjs";
-
-//angular material table
 import { MatPaginator } from "@angular/material/paginator";
 import { Category } from './../../../../model/Category';
 import { CategoryService } from './../../../../shared/service/category.service';
-import { tap } from "rxjs/operators";
 
 @Component({
   selector: 'app-view-category',
