@@ -14,5 +14,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.router.navigateByUrl("/masters/item-master");
   }
+
+  logout(): void {
+    localStorage.removeItem("token");
+    this.router.navigate(["login"])
+  }
   
 }

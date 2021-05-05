@@ -44,9 +44,6 @@ export class ViewCategoryComponent implements OnInit {
 }
 
   onUpdate(){}
-}
-
-
 
 
   // delete(category_id: number): void {
@@ -54,6 +51,11 @@ export class ViewCategoryComponent implements OnInit {
   //     ._delete(category_id)
   //     .pipe(tap(() => (this._dataSource$ = this.categoryListService._fetchAll())));
   // }
+}
+
+
+
+
 
 
 
