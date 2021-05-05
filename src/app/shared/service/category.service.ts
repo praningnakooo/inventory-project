@@ -15,6 +15,10 @@ export class CategoryService {
     "Content-Type": "application/json",
   });
 
+  httpOptions: { headers: HttpHeaders } = {
+    headers: new HttpHeaders({ "Content-Type": "application/json" }),
+  };
+
   constructor(
     private http: HttpClient,
     private errorHandlerService: ErrorHandlerService
@@ -29,5 +33,13 @@ export class CategoryService {
           this.errorHandlerService.handleError<Category[]>("fetchAll", [])
         )
       );
+  }
+
+  _delete(category_id: number): Observable<any> {
+    const url = `http://localhost:3000/categories/${category_id}`;
+
+    return this.http
+      .delete<Category>(url, this.httpOptions)
+      .pipe(catchError(this.errorHandlerService.handleError<any>("delete")));
   }
 }

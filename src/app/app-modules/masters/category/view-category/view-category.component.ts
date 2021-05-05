@@ -6,6 +6,7 @@ import { CategoryService } from './../../../../shared/service/category.service';
 import { User } from "src/app/model/User";
 import { AuthService } from "src/app/shared/service/auth.service";
 import { ModalService } from "../../_modal";
+import { tap } from "rxjs/operators";
 
 @Component({
   selector: 'app-view-category',
@@ -33,19 +34,19 @@ export class ViewCategoryComponent implements OnInit {
   }
 
   openModal(id: string) {
-  this.modalService.open(id);
+    this.modalService.open(id);
+  }
+
+  delete(category_id: number): void {
+    this._dataSource$ = this.categoryListService
+      ._delete(category_id)
+      .pipe(tap(() => (this._dataSource$ = this.categoryListService._fetchAll())));
+  }
 }
 
-}
 
 
 
-
-  // delete(category_id: number): void {
-  //   this._dataSource$ = this.categoryListService
-  //     ._delete(category_id)
-  //     .pipe(tap(() => (this._dataSource$ = this.categoryListService._fetchAll())));
-  // }
 
 
 
