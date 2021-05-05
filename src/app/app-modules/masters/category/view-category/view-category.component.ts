@@ -3,6 +3,8 @@ import { Observable } from "rxjs";
 import { MatPaginator } from "@angular/material/paginator";
 import { Category } from './../../../../model/Category';
 import { CategoryService } from './../../../../shared/service/category.service';
+import { User } from "src/app/model/User";
+import { AuthService } from "src/app/shared/service/auth.service";
 
 @Component({
   selector: 'app-view-category',
@@ -15,15 +17,18 @@ export class ViewCategoryComponent implements OnInit {
     "itCategoryName",
   ];
 
+  user_id: Pick<User, "user_id">;
+
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   _dataSource$!: Observable<Category[]>;
 
 
   constructor(
-    private categoryListService: CategoryService) { }
+    private categoryListService: CategoryService, private authService: AuthService) { }
 
-  ngOnInit(): void {
-    this._dataSource$ = this.categoryListService._fetchAll();
+  ngOnInit(): void {    
+    this.user_id = this.authService.user_id;
+    this._dataSource$ = this.categoryListService._fetchAll();    
   }
 
 
