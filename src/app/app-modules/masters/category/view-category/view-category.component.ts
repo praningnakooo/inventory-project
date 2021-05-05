@@ -26,6 +26,8 @@ export class ViewCategoryComponent implements OnInit {
     this._dataSource$ = this.categoryListService._fetchAll();
   }
 
+
+
   // delete(category_id: number): void {
   //   this._dataSource$ = this.categoryListService
   //     ._delete(category_id)
