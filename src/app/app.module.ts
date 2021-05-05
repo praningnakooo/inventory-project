@@ -11,7 +11,6 @@ import { CommonMultiSelectComponent } from "./shared/controls/common-multi-selec
 import { SidebarComponent } from "./shared/sidebar/sidebar.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-// import { ModalModule } from "ngb-modal";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AuthInterceptorService } from './shared/service/auth-interceptor.service';
 
@@ -23,14 +22,13 @@ import { AuthInterceptorService } from './shared/service/auth-interceptor.servic
     CommonButtonComponent,
     CommonInputComponent,
     CommonSelectComponent,
-    CommonMultiSelectComponent
+    CommonMultiSelectComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    // ModalModule
   ],
   providers: [
     {

@@ -43,7 +43,7 @@ import { ViewUserComponent } from './users/view-user/view-user.component';
     AddOrdersComponent,
     ViewCategoryComponent,
     AddCategoryComponent,
-    ViewUserComponent,
+    ViewUserComponent
   ],
   imports: [
     CommonModule,
