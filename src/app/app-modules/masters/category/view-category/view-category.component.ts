@@ -5,6 +5,8 @@ import { Category } from './../../../../model/Category';
 import { CategoryService } from './../../../../shared/service/category.service';
 import { ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 import { ModalComponent, ModalModule} from "ngb-modal";
+import { User } from "src/app/model/User";
+import { AuthService } from "src/app/shared/service/auth.service";
 
 @Component({
   selector: 'app-view-category',
@@ -17,17 +19,17 @@ export class ViewCategoryComponent implements OnInit {
     "itCategoryName",
   ];
 
-  @ViewChild(MatPaginator, { static: true })
-  paginator: MatPaginator;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   _dataSource$!: Observable<Category[]>;
   closeResult: string;
-
+  user_id: Pick<User, "user_id">;
 
   constructor(
     private categoryListService: CategoryService,
-    private modalService: ModalModule) { }
+    private modalService: ModalModule, private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.user_id = this.authService.user_id;
     this._dataSource$ = this.categoryListService._fetchAll();
   }
 
