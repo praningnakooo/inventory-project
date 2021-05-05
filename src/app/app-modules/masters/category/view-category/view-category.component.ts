@@ -41,6 +41,8 @@ export class ViewCategoryComponent implements OnInit {
 
 
   delete(category_id: number): void {
+    if (!confirm('Are you sure you want to delete this product?')) return;
+
     this._dataSource$ = this.categoryListService
       ._delete(category_id)
       .pipe(tap(() => (this._dataSource$ = this.categoryListService._fetchAll())));

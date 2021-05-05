@@ -31,6 +31,8 @@ export class ViewItemComponent implements OnInit {
   }
 
   delete(product_id: number): void {
+    if (!confirm('Are you sure you want to delete this product?')) return;
+
     this._dataSource$ = this.productListService
       ._delete(product_id)
       .pipe(tap(() => (this._dataSource$ = this.productListService._fetchAll())));

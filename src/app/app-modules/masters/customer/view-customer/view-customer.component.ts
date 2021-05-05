@@ -31,6 +31,8 @@ export class ViewCustomerComponent implements OnInit {
   }
 
   delete(customers_id: number): void {
+    if (!confirm('Are you sure you want to delete this product?')) return;
+
     this._dataSource$ = this.customerListService
       ._delete(customers_id)
       .pipe(tap(() => (this._dataSource$ = this.customerListService._fetchAll())));

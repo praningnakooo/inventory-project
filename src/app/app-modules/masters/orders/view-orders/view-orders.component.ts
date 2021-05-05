@@ -30,6 +30,8 @@ export class ViewOrdersComponent implements OnInit {
   }
 
   delete(orders_id: number): void {
+    if (!confirm('Are you sure you want to delete this product?')) return;
+
     this._dataSource$ = this.orderListService
       ._delete(orders_id)
       .pipe(tap(() => (this._dataSource$ = this.orderListService._fetchAll())));
