@@ -22,22 +22,23 @@ export class ViewCategoryComponent implements OnInit {
   _dataSource$!: Observable<Category[]>;
 
   //change any to something realistiic
-  _categoryMasterFormUpdate: any;
+  _categoryMasterFormUpdate: {
+    category_id: "",
+    category_name: ""
+  };
 
   closeResult: string;
   user_id: Pick<User, "user_id">;
 
   constructor(
-    private categoryListService: CategoryService, private authService: AuthService) { }
+    public categoryListService: CategoryService, private authService: AuthService) {
+
+     }
 
   ngOnInit(): void {
     this.user_id = this.authService.user_id;
     this._dataSource$ = this.categoryListService._fetchAll();
   }
-
-
-
-// update(){}
 
 
   delete(category_id: number): void {
@@ -47,6 +48,25 @@ export class ViewCategoryComponent implements OnInit {
       ._delete(category_id)
       .pipe(tap(() => (this._dataSource$ = this.categoryListService._fetchAll())));
   }
+
+  edit(category){
+    this._categoryMasterFormUpdate = category;
+    console.log(category);
+  }
+
+  updateCategory(){
+    this.categoryListService.updateCategory(this._categoryMasterFormUpdate).subscribe(
+      (resp) =>{
+        console.log(resp);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+
+  }
+
+  resetFormClickHandler() {}
 }
 
 

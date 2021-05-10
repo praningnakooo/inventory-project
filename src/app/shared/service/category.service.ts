@@ -42,4 +42,8 @@ export class CategoryService {
       .delete<Category>(url, this.httpOptions)
       .pipe(catchError(this.errorHandlerService.handleError<any>("delete")));
   }
+
+ public updateCategory(category_id){
+   return this.http.put(this.url, category_id);
+ }
 }
